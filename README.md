@@ -1,23 +1,88 @@
-# CODING_LOG
-정보처리산업기사 과정평가형 수업내용 기록
-팁
-1. 대제목을 만들 때 샵을 여러개 붙일 수록 글자 크기가 작아진다.
-2. 표만들기 -> 파이프 하이픈 파이프을 하고 그걸 복사붙여넣기하여 3개는 만들어야함
-ex)
-|참고|
-|-|
-|참고문헌|
-3. 이미지 -> 드래그앤드롭이 가장 편하다. 또, 이미지를 표에 넣어서 사용해도되고 html태그를 이용하여 이미지를 넣어도 된다.
-![download](https://github.com/user-attachments/assets/3c264506-982d-4489-8c0e-e5babbaf73b8)
-4. 엔터를 친다고 엔터처리가 되지않는다. <br> 이라는 태그를 사용해야 엔터가 쳐진다.
-5. 머리말을 만들 때 마이너스 세개를 붙여쓰면 좋다.
 
-소주제
----
-6. 인용구가 있거나 copy 해올 것이 있다면
+# Project Name
+
+Provide a brief description of your project here. Explain the purpose or main functionality of the project.
+
+## Getting Started
+
+This section should provide instructions on how to get a copy of the project up and running on a local machine for development and testing purposes.
+
+### Prerequisites
+
+List all the prerequisites, the things you need to install the software, and how to install them.
+
 ```
-정보처리산업기사
-과정평가형
-수업내용
-기록
+Give examples
 ```
+
+### Installing
+
+A step by step series of examples that tell you how to get a development environment running.
+
+Say what the step will be:
+
+```
+Give the example
+```
+
+And repeat:
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo.
+
+## Running the Tests
+
+Explain how to run the automated tests for this system.
+
+### Break down into end-to-end tests
+
+Explain what these tests test and why.
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why.
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system.
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/your/project/contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+
+## Authors
+
+* **Your Name** - *Initial work* - [YourUsername](https://github.com/YourUsername)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the XYZ License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
