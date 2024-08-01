@@ -23,4 +23,4 @@ ex)
 ```
 링크를 사용하고싶으면 대괄호 안에 링크 문자로 사용하고싶은걸 적고 그 뒤에 소괄호 안에 실제 링크를 넣으면 된다.
 [네이버](https://naver.com)
-내부문서로 갈거면 [TEST](https://github.com/KIMGACHE/CODING_LOG/blob/main/TEST/README.md)
+내부문서로 갈거면 [TEST](./TEST)
