@@ -65,6 +65,33 @@ ex) 강이란 단어(부호)를 알지만 이것이 공기를 통해 상대방�
 <br>
 
 ## 2Layer 데이터링크 계층
+**하는 일** : 장치와 장치간에 (Point to Point) 운송방식 결정 <br>
+**목적** : 장치와 장치간에 (Point to Point) 신뢰성있는 전송을 보장하기 위한 계층 <br>
+**필요한 요소** <br>
+<ul>연결된 장비 간 식별 주소(어떤 장치와 연결되었는지) = MAC주소</ul>
+<ul>오류제어 (데이터가 잘 들어왔는지)</ul>
+<ul>흐름제어 (언제 데이터를 보낼 것인지, 어느정도 속도로 데이터를 보낼 것인지)</ul>
+**장치** : **Layer 2 Switch**, Bridge, Network Interface Card, 무선 Access Point <br>
+
+<br>
+<br>
+**데이터링크에 사용되는 프로토콜**
+1. **LAN**
+<ul>**Ethernet** - CSMA/CD</ul>
+<ul>Wi-fi</ul>
+<ul>토큰 링</ul>
+<ul>FDDI</ul>
+2. **WAN**
+<ul>**HDLC**</ul>
+<ul>PPP(HDLC+인증)</ul>
+<ul>프레임 릴레이</ul>
+<ul>ATM</ul>
+
+<br>
+CSMA/CD방식이란? <br>
+신호를 보내보고 지나가도 될 것 같으면 지나가는 방식 <br>
+문제는 통신량이 많을 때 충돌이 발생한다. <br>
+-> Switch를 통해 해결함.
 
 
 
