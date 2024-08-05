@@ -67,7 +67,7 @@ CSMA/CD방식이란? <br>
 ## 3Layer 네트워크 계층
 **하는 일** : 경로 탐색 <br>
 **목적** : 전달하려 하는 데이터를 목적지로 빠르고 안전한 경로로 안내하기 위한 최적경로 탐색 <br>
-**장치** : **<span style='color:red'>라우터</span>**, L3 Switch <br>
+**장치** : **<span style="color:red">라우터</span>**, L3 Switch <br>
 <br>
 **프로토콜 종류**
 1. **IP** : 인터넷에서 사용되는 기본 주소 체계
