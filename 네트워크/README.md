@@ -44,16 +44,16 @@ ex) 강이란 단어(부호)를 알지만 이것이 공기를 통해 상대방�
 
 **데이터링크에 사용되는 프로토콜**
 1. **LAN**
-  ***Ethernet** - CSMA/CD
-  *Wi-fi
-  *토큰 링
-  *FDDI
+- **Ethernet** - CSMA/CD
+- Wi-fi
+- 토큰 링
+- FDDI
 
 2. **WAN**
-***HDLC**
-*PPP(HDLC+인증)
-*프레임 릴레이
-*ATM
+- **HDLC**
+- PPP(HDLC+인증)
+- 프레임 릴레이
+- ATM
 
 <br>
 CSMA/CD방식이란? <br>
