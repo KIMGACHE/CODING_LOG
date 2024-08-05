@@ -48,9 +48,24 @@ create test1db.tbl_user (
   user_name varchar(45) not null
 );
 ```
-삭제 : drop DB명.Table명;
+삭제 : drop DB명.Table명; <br>
 
-
+**Table 수정** <br>
+1. Column 추가
+   alter table DB명.Table명 add column column명 데이터타입 제약조건;
+   ```
+   alter table test1db.tbl_user add column age int null;
+   ```
+3. Column 삭제
+   alter table DB명.Table명 drop column column명;
+   ```
+   alter table test1db.tbl_user drop column age;
+   ```
+5. Column 수정
+   alter table DB명.Table명 change column 기존column명 수정할column명 데이터타입 제약조건;
+   ```
+   alter table test1db.tbl_user change column user_name name varchar(45) not null;
+   ```
 
 
 
