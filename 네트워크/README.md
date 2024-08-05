@@ -40,9 +40,8 @@ ex) 강이란 단어(부호)를 알지만 이것이 공기를 통해 상대방�
 2. 오류제어 (데이터가 잘 들어왔는지)
 3. 흐름제어 (언제 데이터를 보낼 것인지, 어느정도 속도로 데이터를 보낼 것인지)
 **장치** : **Layer 2 Switch**, Bridge, Network Interface Card, 무선 Access Point <br>
+<br>
 
-<br>
-<br>
 **데이터링크에 사용되는 프로토콜**
 1. **LAN**
 <ul>**Ethernet** - CSMA/CD</ul>
