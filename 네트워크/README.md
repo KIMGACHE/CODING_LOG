@@ -44,10 +44,13 @@ ex) 강이란 단어(부호)를 알지만 이것이 공기를 통해 상대방�
 
 **데이터링크에 사용되는 프로토콜**
 1. **LAN**
-<ul>**Ethernet** - CSMA/CD</ul>
+<ul>
+  **Ethernet** - CSMA/CD
+</ul>
 <ul>Wi-fi</ul>
 <ul>토큰 링</ul>
 <ul>FDDI</ul>
+
 2. **WAN**
 <ul>**HDLC**</ul>
 <ul>PPP(HDLC+인증)</ul>
