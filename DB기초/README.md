@@ -66,9 +66,9 @@ create test1db.tbl_user (
    ```
    alter table test1db.tbl_user change column user_name name varchar(45) not null;
    ```
-<br>
+
 **Table 값 입력** <br>
-insert into 테이블명 (넣을 열) values (넣을 값);
+insert into 테이블명 (넣을 열) values (넣을 값); 
 ```
 insert into tbl_user (user_id, name, age, user_address) values ('user1', '홍길동', 27, '대구');
 ```
@@ -77,13 +77,13 @@ insert into tbl_user (user_id, name, age, user_address) values ('user1', '홍길
 ```
 insert into tbl_user values ('user2', '남길동', 25, '대구');
 ```
-<br>
+
 **Table 값 수정** <br>
 update 테이블명 set 수정할 열 = 수정할 값 where 조건;
 ```
 update tbl_user set name='서길동' where user_id = 'user1';
 ```
-<br>
+
 **Table 권한부여** <br>
 1. User 조회
 ```
