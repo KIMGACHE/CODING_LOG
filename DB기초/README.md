@@ -66,15 +66,53 @@ create test1db.tbl_user (
    ```
    alter table test1db.tbl_user change column user_name name varchar(45) not null;
    ```
-
-
-
-
-
-
-
-
-
+<br>
+**Table 값 입력** <br>
+insert into 테이블명 (넣을 열) values (넣을 값);
+```
+insert into tbl_user (user_id, name, age, user_address) values ('user1', '홍길동', 27, '대구');
+```
+꼭 모든 열을 적을 필요는 없고 필요한 열과 필요한 값만 넣어도 된다. <br>
+혹시 모든 열에 다 값을 넣을거라면 (넣을 열)을 생략하고 values 뒤에 열 순서대로 넣어주면 된다.
+```
+insert into tbl_user values ('user2', '남길동', 25, '대구');
+```
+<br>
+**Table 값 수정** <br>
+update 테이블명 set 수정할 열 = 수정할 값 where 조건;
+```
+update tbl_user set name='서길동' where user_id = 'user1';
+```
+<br>
+**Table 권한부여** <br>
+1. User 조회
+```
+show databases;
+use mysql;
+show tables;
+select host, user from user;
+```
+2. User 생성
+create user 유저명 identified by '비밀번호'; <br>
+내 컴퓨터 기준 - localhost
+```
+create user user2@localhost identified by '1234';
+create user user3@'%' identified by '1234';
+```
+3. 권한 부여
+grant 권한을 줄 명령어 on 권한을 줄 DB.권한을 줄 Table명 to 권한을 줄 유저;
+```
+grant select, insert on test1db.* to user3@localhost;
+grant all privileges on test1db.* to user3@localhost; - 모든 권한을 부여할 때
+```
+부여된 권한을 확인하고 싶을 때
+```
+show grant for user3@localhost;
+```
+부여된 권한을 적용하고 싶을 때
+```
+flush privileges;
+```
 
 
 
