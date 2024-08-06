@@ -92,15 +92,15 @@ use mysql;
 show tables;
 select host, user from user;
 ```
-2. User 생성
+3. User 생성
 create user 유저명 identified by '비밀번호'; <br>
 내 컴퓨터 기준 - localhost
 ```
 create user user2@localhost identified by '1234';
 create user user3@'%' identified by '1234';
 ```
-3. 권한 부여
-grant 권한을 줄 명령어 on 권한을 줄 DB.권한을 줄 Table명 to 권한을 줄 유저;
+5. 권한 부여
+   grant 권한을 줄 명령어 on 권한을 줄 DB.권한을 줄 Table명 to 권한을 줄 유저;
 ```
 grant select, insert on test1db.* to user3@localhost;
 grant all privileges on test1db.* to user3@localhost; - 모든 권한을 부여할 때
@@ -113,38 +113,3 @@ show grant for user3@localhost;
 ```
 flush privileges;
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
