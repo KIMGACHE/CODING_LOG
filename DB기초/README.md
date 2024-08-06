@@ -100,7 +100,7 @@ create user user2@localhost identified by '1234';
 create user user3@'%' identified by '1234';
 ```
 3. 권한 부여
-   grant 권한을 줄 명령어 on 권한을 줄 DB.권한을 줄 Table명 to 권한을 줄 유저;
+grant 권한을 줄 명령어 on 권한을 줄 DB.권한을 줄 Table명 to 권한을 줄 유저;
 ```
 grant select, insert on test1db.* to user3@localhost;
 grant all privileges on test1db.* to user3@localhost; - 모든 권한을 부여할 때
