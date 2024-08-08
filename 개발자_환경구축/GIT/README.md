@@ -29,8 +29,8 @@ git commit -m "V0.0 a.txt added"
 
 **git reset** : commit을 취소하는 명령어 <br>
 3종류의 reset 옵션이 있다. <br>
-1. --soft : 파일과 staging area에 내용이 모두 그대로 남아 있다.
-2. --mixed : 파일은 남아있으나 staging area에는 내용이 사라진다.
+1. --soft : 파일과 reset하는 시점에 staging area에 존재하는 내용이 모두 그대로 남아 있다.
+2. --mixed : 파일은 남아있으나 reset하는 시점에 staging area에 존재하는 내용이 사라진다.
 3. --hard : 파일과 staging area가 모두 사라진다.
 <br>
 
