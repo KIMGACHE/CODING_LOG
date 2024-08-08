@@ -19,6 +19,11 @@ git config --global user.name "KIMGACHE” <br>
 ```
 git commit -m "V0.0 a.txt added"
 ```
+<br>
+
+**git log** : 로그를 출력한다. (--oneline 옵션을 통해 간략한 버전으로 볼 수 있다.)
+
+<br>
 
 **git reset** : commit을 취소하는 명령어 <br>
 3종류의 reset 옵션이 있다. <br>
