@@ -82,3 +82,13 @@ Local Repository에서 작업한 내용을 원격 Repository로 PUSH하는 방�
 4. **git remote add origin [GITHUB REPOSITORY주소]**
 5. **git push origin**
 6. 가장 처음 push를 진행했다면 **git push --set-upstream origin main** 입력 후 5번 진행
+
+<br>
+
+**GIT HUB에서 Local Repository로 가져오는(PULL) 방법** <br>
+1. Local로 가져오고 싶은 Github repository로 접속한다.
+2. <>Code를 눌러 나오는 https의 주소를 복사한다.
+3. 가져올 경로의 cmd에서 git clone https://github.com/KIMGACHE/YelpCamp.git 입력 (2번의 주소)
+
+혹시 Github repository에 있는 내용이 달라졌다면 **git pull origin**으로 변경사항을 Local에 적용시킬 수 있다!
+
