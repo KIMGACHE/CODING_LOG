@@ -53,8 +53,8 @@ branch를 만들어야 하는 이유
 <br>
 
 **Brnach 명령어** <br>
-git branch : branch를 만든다.
-git branch [branch명] : 해당 이름의 branch를 생성한다. <br>
+git branch : branch 목록을 출력한다.
+git branch [branch명] : 해당 이름의 branch를 생성한다. (-M 옵션을 주면 가장 상위의 branch 이름을 설정) <br>
 git switch [branch명] : 해당 이름의 branch로 변경한다. <br>
 (git log를 통해 현재 사용중인 branch가 무엇인지 확인 할 수 있다.) <br>
 
@@ -73,3 +73,11 @@ git merge [병합할 branch명] : branch를 병합한다.
 충돌을 해결하고 나서 병합을 진행하려면 --continue 옵션을 merge에 준다. <br>
 충돌을 무시하고 병합을 진행하려면 --abort옵션을 merge에 준다. <br>
 
+## GIT
+Local Repository에서 작업한 내용을 원격 Repository로 PUSH하는 방법 <br>
+1. git init
+2. git branch -M main
+3. 작업한 뒤 commit
+4. git remote add origin(이름바꿀수있음) [GITHUB REPOSITORY주소]
+5. git push origin
+6. 가장 처음 push를 진행했다면 git push --set-upstream origin main 입력 후 5번 진행
