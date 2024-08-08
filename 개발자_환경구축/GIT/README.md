@@ -10,6 +10,8 @@
 ```
 git add a.txt
 ```
+<br>
+
 **git commit** : staging area에 추가한 파일을 local repository에 업로드한다. (-m 옵션을 통해 메시지를 남길 수 있다.) <br>
 처음 git을 사용할 때에는 사용자가 누군지 알 수 없기때문에 깃헙 이메일과 깃헙에서 사용하는 이름을 입력해주어야 한다. <br>
 
@@ -37,6 +39,7 @@ git reset --hard [로그ID]
 git reset --mixed [로그ID]
 git reset --soft [로그ID]
 ```
+<br>
 그럼 reset을 하면 되돌릴 수 없나? <br>
 git reflog를 하면 commit시점별로 로그가 남아있고 로그ID를 통해 원하는 시점으로 reset하면된다.
 
