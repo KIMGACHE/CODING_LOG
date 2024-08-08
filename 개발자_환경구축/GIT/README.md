@@ -26,6 +26,7 @@ git commit -m "V0.0 a.txt added"
 2. --mixed : 파일은 남아있으나 staging area에는 내용이 사라진다.
 3. --hard : 파일과 staging area가 모두 사라진다.
 <br>
+
 ```
 git reset --hard [로그ID]
 git reset --mixed [로그ID]
