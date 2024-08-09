@@ -150,7 +150,15 @@ chmod u=r ./file (file에 대해 사용자 계정이 read권한만을 가지도�
 <br>
 디렉토리와 파일의 권한이 충돌하면 디렉토리의 권한이 우선된다.
 
+## 프로세스 우선순위
+ps : 실행되는 프로세스를 출력
+ps -elf | grep ping <br>
+<br>
 
+**kill** -9 [Process ID] : 동작중인 Process를 강제종료 <br>
+ps를 통해 본 Process 목록을 보면 PRI와 NI라는 항목이 있다.<br>
+PRI : Process의 우선순위로 80이 기본값이며 값이 낮을 수록 우선순위가 높다. <br>
+NI : 
 
 
 
