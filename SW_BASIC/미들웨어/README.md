@@ -19,3 +19,25 @@
 7. **네트워크 보안**
    - 네트워크에 연결된 호스트들의 송수신 정보 탈취 및 변조를 통한 불법적인 서비스 이용을 방지하는 기술
    - ex) 네트워크 접근 제어, 보안 통신, 침입방지/사고대응, 보안 관리
+
+# 개발환경 구축
+1. Openjdk 11.0.2 download
+   환경변수 설정 - 시스템 변수 - Path - jdk bin폴더경로를 Path에 새롭게 추가
+3. Tomcat 9.0 download
+5. Eclipse download
+   
+Eclipse 설정
+1. window - preferences - general - workspace - text file encoding에 other UFT-8인지 체크
+2. window - preferences - files라고 입력 - CSS Files에 Encoding부분을 UTF-8로 적용 (HTML, JSP Files도 마찬가지로 적용)
+3. File - New - Other - server 입력 후 더블클릭 - Apache - Tomcat 9 버전 - Tomcat 경로 입력(폴더 내부로 한번은 들어가보기)
+4. File - New Dynamic Web Project 선택 - Target Runtime(미들웨어 선택) - Tomcat 9 선택
+5. 프로젝트 우클릭 - Properties - Java Build Path - Server Runtime이 Tomcat 9 버전인지 확인
+6. 프로젝트 우클릭 - Properties - Project Facets - Java버전을 현재 Eclipse버전과 같게 설정
+7. 프로젝트 우클릭 - Properties - Server - Tomcat 9 버전 선택 후 Apply
+8. src - main - webapp - WEB-INF - lib에 Tomcat 9 버전 lib폴더에 들어있는 jsp-api.jar과 servlet-api.jar을 복사하여 넣는다.
+
+<br>
+
+# GIT과 Eclipse 연동하기
+프로젝트 우클릭 후 - Team - Share Project - Use or create repository in parent folder or project 체크
+   
