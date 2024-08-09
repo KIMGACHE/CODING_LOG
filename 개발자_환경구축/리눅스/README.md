@@ -158,7 +158,14 @@ ps -elf | grep ping <br>
 **kill** -9 [Process ID] : 동작중인 Process를 강제종료 <br>
 ps를 통해 본 Process 목록을 보면 PRI와 NI라는 항목이 있다.<br>
 PRI : Process의 우선순위로 80이 기본값이며 값이 낮을 수록 우선순위가 높다. <br>
-NI : 
+NI : nice항목은 우선순위 값을 +19 ~ -20까지 변화시킬 수 있다. <br>
+
+<br>
+
+```
+nice -n -10 ping 127.16.0.100
+```
+80이었던 ping의 우선순위가 70으로 바뀐다.
 
 
 
