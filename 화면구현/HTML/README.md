@@ -40,8 +40,8 @@ ex) &nbsp; 는 공백을 의미한다.
 ```
 
 ### 리스트형 구조생성 태그
-순서가 없는 리스트 : unordered list, <ul></ul> <br>
-순서가 있는 리스트 : ordered lsit, <ol></ol> <br>
+순서가 없는 리스트 : unordered list, <ul></ul>
+순서가 있는 리스트 : ordered lsit, <ol></ol>
 ```
     <ul>
       <li>List1</li>
