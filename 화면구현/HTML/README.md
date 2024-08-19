@@ -1,5 +1,5 @@
 ## HTML
----
+
 **HTML이란?** Hyper Text Markup Language의 약어<br>
 **HyperText** : 웹페이지에서 다른 페이지로 이동할 수 있도록 하는 것<br>
 <br>
@@ -20,7 +20,9 @@ line형태의 경우에는 행의 구조를 바꾸지 않으며 특별한 스타
 ```
 <span style=”color:red;background-color:black”>
 ```
+
 <br>
+
 ### 단락 태그
 <p></p> : 위,아래 여백을 주는 단락을 만들어 주는 태그 <br>
 <div></div> : 한 라인을 통째로 사용하는 단락을 만드는 태그 (block) <br>
