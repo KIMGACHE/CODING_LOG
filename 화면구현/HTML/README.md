@@ -181,7 +181,12 @@ id를 사용할 대에는 **#id명** 으로 지정하여 사용한다.
 ### 앵커 태그
 <a href=""></a>의 구조로 앵커 태그의 내용을 클릭했을 때 해당 링크로 이동된다.
 ```
-<a href="https://www.naver.com">NAVER 이동</a> -> NAVER 이동이라는 텍스트를 클릭하는 경우 해당 주소로 이동한다.
+<a href="https://www.naver.com">NAVER 이동</a>
+<a href="https://www.naver.com" target="_blank">NAVER 이동(새로운 탭)</a>
+<a href="./02Basic.html">02Basic.html이동</a>
 ```
-
+target 속성의 '_blank'를 이용하면 새로운 웹페이지를 열어 해당 링크로 이동할 수 있다.
+링크에 문서의 위치를 입력하면 해당 문서를 열어볼 수 있다.
+html문서에 요소 선택자를 이용하여 원하는 요소를 선택하고 앵커태그의 링크에 해당 요소로 이동할 수도 있다.
+id="HTML" -> <a href="#HTML">HTML</a>
 
