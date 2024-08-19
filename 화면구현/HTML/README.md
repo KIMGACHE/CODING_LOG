@@ -185,8 +185,23 @@ id를 사용할 대에는 **#id명** 으로 지정하여 사용한다.
 <a href="https://www.naver.com" target="_blank">NAVER 이동(새로운 탭)</a>
 <a href="./02Basic.html">02Basic.html이동</a>
 ```
-target 속성의 '_blank'를 이용하면 새로운 웹페이지를 열어 해당 링크로 이동할 수 있다.
-링크에 문서의 위치를 입력하면 해당 문서를 열어볼 수 있다.
-html문서에 요소 선택자를 이용하여 원하는 요소를 선택하고 앵커태그의 링크에 해당 요소로 이동할 수도 있다.
-id="HTML" -> <a href="#HTML">HTML</a>
+target 속성의 '_blank'를 이용하면 새로운 웹페이지를 열어 해당 링크로 이동할 수 있다. <br>
+링크에 문서의 위치를 입력하면 해당 문서를 열어볼 수 있다. <br>
+html문서에 요소 선택자를 이용하여 원하는 요소를 선택하고 앵커태그의 링크에 해당 요소로 이동할 수도 있다. <br>
+id="HTML" -> <a href="#HTML">HTML</a> <br>
+
+### 이미지 태그
+구조 : <img src="" alt=""></img> <br>
+src : 이미지파일의 경로
+alt : 이미지에 문제가 생겼을 때 표시할 텍스트
+```
+<img src="./images/다람쥐.jpg" alt=”다람쥐">
+<img src="https://cdn.imweb.me/upload/S201910012ff964777e0e3/62f9a36ea3cea.jpg" alt="강아지">
+```
+외부에서 이미지를 가져올 수도 있고 local에서 이미지를 가져올 수도 있다.
+
+
+
+
+
 
