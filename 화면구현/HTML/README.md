@@ -200,8 +200,47 @@ alt : 이미지에 문제가 생겼을 때 표시할 텍스트
 ```
 외부에서 이미지를 가져올 수도 있고 local에서 이미지를 가져올 수도 있다.
 
+### 비디오 태그
+```
+<video src="./videos/video1.mp4" type="video/mp4">
+    
+</video>
 
+<video>
+    <source src="./videos/video1.mp4" type="video/mp4">
+</video>
+```
+위의 방법은 하나의 비디오를 삽입할 때 사용하는 방식이고, 아래 방법은 여러개의 source를 삽입할 때 사용하는 방식으로 source태그를 여러개 열어 여러 개의 source를 삽입할 수 있다. <br>
+비디오 태그의 속성에는 **controls**(재생버튼), **autoplay**(자동재생), **muted**(음소거,정책상 자동재생 속성을 사용하려면 음소거가 필요한 경우가 있다), **loop**(재생이 끝나도 반복적으로 재생한다) <br>
 
+유튜브 영상을 가져오고 싶다면 해당 영상-공유-퍼가기에 있는 코드를 복사하여 src에 복사한다.<br>
+영상 링크에 &autoplay=1&mute=1을 붙임으로써 자동재생 시킬 수 있다. <br>
 
+### Form 태그
+사용자로부터 특정 정보를 받아 서버로 전달하는데 사용되는 태그
+<form action="" method=""></form> <br>
+action : 전달받는 서버 API() or EndPoint <br>
+method : 서버로 요청하는 방식 <br>
 
+**GET** : 사용자 요청 정보를 Query String으로 전달 (default) <br>
+**POST** : 사용자 요청 정보를 Request Body에 담아 전달 (optional) <br>
+- PUT : <br>
+- PATCH : <br>
+- DELETE : <br>
 
+<br>
+
+Form에 정보를 입력하는 Input 태그의 종류
+```
+<input type="text"></input>        -> 텍스트 입력
+<input type="password"></input>    -> 비밀번호 입력, 입력한 값이 보이지 않는다.
+<input type="email"></input>       -> 이메일 형식의 입력값이 아니면 입력을 허용하지 않는다.
+<input type="number"></input>      -> 숫자 입력, 카운트의 최소값(min), 최대값(max), 카운트당 몇이 오를것인가(step) 등을 설정가능
+<input type="tel"></input>         -> 전화번호 입력, pattern을 통해 원하는 형식을 지정할 수 있다. ex) pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+<input type="text"></input>
+<input type="text"></input>
+<input type="text"></input>
+<input type="text"></input>
+<input type="text"></input>
+<input type="text"></input>
+```
