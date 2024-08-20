@@ -232,15 +232,17 @@ method : 서버로 요청하는 방식 <br>
 
 Form에 정보를 입력하는 Input 태그의 종류
 ```
-<input type="text"></input>        -> 텍스트 입력
-<input type="password"></input>    -> 비밀번호 입력, 입력한 값이 보이지 않는다.
-<input type="email"></input>       -> 이메일 형식의 입력값이 아니면 입력을 허용하지 않는다.
-<input type="number"></input>      -> 숫자 입력, 카운트의 최소값(min), 최대값(max), 카운트당 몇이 오를것인가(step) 등을 설정가능
-<input type="tel"></input>         -> 전화번호 입력, pattern을 통해 원하는 형식을 지정할 수 있다. ex) pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-<input type="text"></input>
-<input type="text"></input>
-<input type="text"></input>
-<input type="text"></input>
-<input type="text"></input>
-<input type="text"></input>
+<input type="text"/>        -> 텍스트 입력
+<input type="password"/>    -> 비밀번호 입력, 입력한 값이 보이지 않는다.
+<input type="email"/>       -> 이메일 형식의 입력값이 아니면 입력을 허용하지 않는다.
+<input type="number"/>      -> 숫자 입력, 카운트의 최소값(min), 최대값(max), 카운트당 몇이 오를것인가(step) 등을 설정가능
+<input type="tel"/>         -> 전화번호 입력, 원하는 형식을 지정할 수 있다. ex) pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+<input type="radio" name="gender" value="M"/>남자    -> 여러개 중 하나만을 선택해야 할 때
+<input type="radio" name="gender" value="F"/>여자    -> name이 같아야하고 실제 전달되는 값인 value를 다르게 설정한다.
+<input type="checkbox" name="hobby" value="game"/>게임    -> 여러개 중 중복하여 선택할 수 있다.
+<input type="checkbox" name="hobby" value="game"/>게임    -> 마찬가지로 name이 같고, value를 다르게 설정한다.
+<input type="file"/>        -> 파일 입력, multiple옵션을 통해 여러개의 파일을 입력받을 수 있다.
+<input type="date">         -> 날짜 입력, 연월일을 지정할 수 있으면 yyyy-mm-dd형식으로 전달된다.
+<input type="datetime-local">    -> 연월일과 시분가지 입력할 수 있다. ex) date=2024-08-20T12%3A50
+<input type="color">        -> 색상 입력, RGB값이 전달된다.
 ```
