@@ -28,11 +28,11 @@ display: inline-block;
 <br>
 
 **Style 속성**
-width : 너비
-height : 높이
-margin : 요소와 요소와의 간격, 예를 들어 20px로 설정했다면 상하좌우 20px로 설정된다.
-padding : border(테두리)와 contents(내용)사이의 간격, 예를 들어 20px로 설정했다면 상하좌우 20px로 설정된다.
-border : 테두리
+width : 너비 <br>
+height : 높이 <br>
+margin : 요소와 요소와의 간격, 예를 들어 20px로 설정했다면 상하좌우 20px로 설정된다. <br>
+padding : border(테두리)와 contents(내용)사이의 간격, 예를 들어 20px로 설정했다면 상하좌우 20px로 설정된다. <br>
+border : 테두리 <br>
 
 
 
