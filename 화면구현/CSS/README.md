@@ -27,7 +27,7 @@ display: inline-block;
 
 <br>
 
-**Style 속성**
+**Style 속성** <br>
 width : 너비 <br>
 height : 높이 <br>
 margin : 요소와 요소와의 간격, 예를 들어 20px로 설정했다면 상하좌우 20px로 설정된다. <br>
