@@ -90,8 +90,21 @@ b**ackground-attachment**: <br>
    font-weight: 100 ~ 900; <br>
    100 ~ 900사이의 값으로 굵기를 지정할 수 있다. (400이 default값)<br>
 
-
-
+### Font-Family
+1. 자체 폰트 사용
+   font-family: 상태에서 crtl + space를 누르면 목록이 나온다.
+3. 외부 링크 참조
+5. 폰트 다운로드 후 적용
+   폰트 다운로드 후 style태그 내에
+   ```
+   @font-face {
+      font-family: "dongle"; -> 폰트 이름지정
+      src: url("./fonts/Dongle-Regular.ttf"); -> 다운받은 폰트 경로
+      font-weight: 400; -> 폰트 굵기 설정
+      font-style: normal; -> 폰트 스타일 설정
+   }
+   이후 font-family: 'dongle'; 로 사용
+   ```
 
 
 
