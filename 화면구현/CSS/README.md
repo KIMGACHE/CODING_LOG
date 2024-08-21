@@ -108,32 +108,71 @@ b**ackground-attachment**: <br>
 
 ### BOX
 #### Box의 Margin
-1. margin: 10px; <br>
+1. **margin: 10px;** <br>
    - top, right, bottom, left 모두 10px로 margin을 설정한다. <br>
-3. margin: 10px 20px; <br>
+3. **margin: 10px 20px;** <br>
    - (top, bottom)은 10px, (right, left)는 20px로 margin을 설정한다. <br>
-5. margin: 10px 20px 30px; <br>
+5. **margin: 10px 20px 30px;** <br>
    - top은 10px, (right,left)는 20px, bottom은 30px로 margin을 설정한다. <br>
-7. margin: 10px 20px 30px 40px; <br>
+7. **margin: 10px 20px 30px 40px;** <br>
    - top:10px, right:20px, bottom:30px, left:40px로 margin을 설정한다. <br>
 
-+ margin-(방향)을 통해 원하는 방향에만 margin을 적용할 수도 있다. <br>
+**※ margin-(방향)을 통해 원하는 방향에만 margin을 적용할 수도 있다.** <br>
 ex) margin-top: 100px; <br>
 <br>
 기본적으로 margin은 시계방향으로 설정할 수 있다. <br>
 
 #### Box의 Padding
-1. padding: 10px; <br>
+1. **padding: 10px;** <br>
    - top, right, bottom, left 모두 10px로 padding을 설정한다. <br>
-3. padding: 10px 20px; <br>
+3. **padding: 10px 20px;** <br>
    - (top, bottom)은 10px, (right, left)는 20px로 padding을 설정한다. <br>
-5. padding: 10px 20px 30px; <br>
+5. **padding: 10px 20px 30px;** <br>
    - top은 10px, (right,left)는 20px, bottom은 30px로 padding을 설정한다. <br>
-7. padding: 10px 20px 30px 40px; <br>
+7. **padding: 10px 20px 30px 40px;** <br>
    - top:10px, right:20px, bottom:30px, left:40px로 padding을 설정한다. <br>
 
-+ padding-(방향)을 통해 원하는 방향에만 padding을 적용할 수도 있다. <br>
+**※ padding-(방향)을 통해 원하는 방향에만 padding을 적용할 수도 있다.** <br>
 ex) padding-top: 100px; <br>
 <br>
 기본적으로 padding은 시계방향으로 설정할 수 있다. <br>
 
+#### Box Sizing 
+**box-sizing: border-box;** <br>
+contents box + border + padding의 길이를 모두 합쳐서 너비나 높이를 설정한다.<br>
+<br>
+**box-sizing: content-box;(default)** <br>
+너비나 높이가 contents box의 크기로만 설정된다. border나 padding의 경우 너비와 높이에 더해진다.<br>
+
+
+### Border
+**border:(굵기) (스타일) (색상);** 과 같이 테두리를 설정할 수 있다.
+```
+ex) border: 1px solid red;
+```
+<br>
+
+**※ margin과 padding처럼 특정 방향에만 border를 적용시킬 수 있다.**
+```
+ex) border-right: 3px dashed green;
+```
+<br>
+스타일에는 solid(실선), dashed, dotted(점선), double(두줄) 등등이 있다.<br>
+<br>
+
+**테두리의 꼭짓점** <br>
+border-radius: 15px; <br>
+반지름이 15px인 원으로 꼭짓점을 잘라냈다. <br>
+border-radius: 15px 35px; <br>
+(좌측상단, 우측하단)을 15px, (우측상단, 좌측하단)을 35px씩 꼭짓점을 잘라냈다. <br>
+border-radius: 10px 50px 100px; <br>
+좌측상단을 10px, (우측상단, 좌측하단)을 50px, 우측하단을 100px씩 꼭짓점을 잘라냈다. <br>
+border-radius: 10px 30px 50px 100px; <br>
+좌측상단을 기준으로 시계방향으로 적용한다. <br>
+
+#### OverFlow
+자식태그가 부모태그보다 더 커지는 경우에 overflow속성을 통해 수정할 수 있다.<br>
+overflow: auto; -> 스크롤을 만들어준다.<br>
+overflow: hidden; -> 넘친부분을 가려준다.<br>
+
+###
