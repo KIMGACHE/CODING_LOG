@@ -105,6 +105,7 @@ b**ackground-attachment**: <br>
    }
    이후 font-family: 'dongle'; 로 사용
    ```
+<hr>
 
 ### BOX
 #### Box의 Margin
@@ -144,6 +145,7 @@ contents box + border + padding의 길이를 모두 합쳐서 너비나 높이�
 **box-sizing: content-box;(default)** <br>
 너비나 높이가 contents box의 크기로만 설정된다. border나 padding의 경우 너비와 높이에 더해진다.<br>
 
+<hr>
 
 ### Border
 **border:(굵기) (스타일) (색상);** 과 같이 테두리를 설정할 수 있다.
@@ -160,6 +162,8 @@ ex) border-right: 3px dashed green;
 스타일에는 solid(실선), dashed, dotted(점선), double(두줄) 등등이 있다.<br>
 <br>
 
+<hr>
+
 **테두리의 꼭짓점** <br>
 border-radius: 15px; <br>
 반지름이 15px인 원으로 꼭짓점을 잘라냈다. <br>
@@ -169,7 +173,9 @@ border-radius: 10px 50px 100px; <br>
 좌측상단을 10px, (우측상단, 좌측하단)을 50px, 우측하단을 100px씩 꼭짓점을 잘라냈다. <br>
 border-radius: 10px 30px 50px 100px; <br>
 좌측상단을 기준으로 시계방향으로 적용한다. <br>
+
 <hr>
+
 #### OverFlow
 자식태그가 부모태그보다 더 커지는 경우에 overflow속성을 통해 수정할 수 있다.<br>
 overflow: auto; -> 스크롤을 만들어준다.<br>
