@@ -74,7 +74,7 @@ b**ackground-attachment**: <br>
 
 <br>
 
-###TEXT
+### TEXT
 1. 글자 간격
    letter-spacing: 자간 <br>
    word-spacing: 단어와 단어 사이의 간격 <br>
