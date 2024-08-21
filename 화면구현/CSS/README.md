@@ -106,14 +106,34 @@ b**ackground-attachment**: <br>
    이후 font-family: 'dongle'; 로 사용
    ```
 
+### BOX
+#### Box의 Margin
+1. margin: 10px; <br>
+   - top, right, bottom, left 모두 10px로 margin을 설정한다. <br>
+3. margin: 10px 20px; <br>
+   - (top, bottom)은 10px, (right, left)는 20px로 margin을 설정한다. <br>
+5. margin: 10px 20px 30px; <br>
+   - top은 10px, (right,left)는 20px, bottom은 30px로 margin을 설정한다. <br>
+7. margin: 10px 20px 30px 40px; <br>
+   - top:10px, right:20px, bottom:30px, left:40px로 margin을 설정한다. <br>
 
++ margin-(방향)을 통해 원하는 방향에만 margin을 적용할 수도 있다. <br>
+ex) margin-top: 100px; <br>
+<br>
+기본적으로 margin은 시계방향으로 설정할 수 있다. <br>
 
+#### Box의 Padding
+1. padding: 10px; <br>
+   - top, right, bottom, left 모두 10px로 padding을 설정한다. <br>
+3. padding: 10px 20px; <br>
+   - (top, bottom)은 10px, (right, left)는 20px로 padding을 설정한다. <br>
+5. padding: 10px 20px 30px; <br>
+   - top은 10px, (right,left)는 20px, bottom은 30px로 padding을 설정한다. <br>
+7. padding: 10px 20px 30px 40px; <br>
+   - top:10px, right:20px, bottom:30px, left:40px로 padding을 설정한다. <br>
 
-
-
-
-
-
-
-
++ padding-(방향)을 통해 원하는 방향에만 padding을 적용할 수도 있다. <br>
+ex) padding-top: 100px; <br>
+<br>
+기본적으로 padding은 시계방향으로 설정할 수 있다. <br>
 
