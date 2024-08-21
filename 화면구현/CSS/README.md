@@ -87,8 +87,8 @@ b**ackground-attachment**: <br>
    line-through : text 중앙에 줄 긋기 <br>
    none : 아무 설정도 없다.(default) <br>
 7. 폰트 굵기
-   font-weight: 100~900; <br>
-   100~900사이의 값으로 굵기를 지정할 수 있다. (400이 default값)<br>
+   font-weight: 100 ~ 900; <br>
+   100 ~ 900사이의 값으로 굵기를 지정할 수 있다. (400이 default값)<br>
 
 
 
