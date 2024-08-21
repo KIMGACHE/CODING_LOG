@@ -45,10 +45,10 @@ max-height : 최대 높이 (height가 auto인 경우에는 작아지려는 성�
 
 ### Color
 **색상을 표현하는 방식** <br>
-1. 자체 예약어를 사용하는 방식
-2. rgb(r,g,b,)함수를 사용하는 방식, 각 값은 0~255값으로 이루어진다.
-3. rgba(r,g,b,a)함수를 사용하는 방식, 각 rgb값은 0~255값으로 a값은 0~1로 이루어지며 0에 가까울 수록 투명하고 1에 가까울 수록 불투명하다.
-4. HTML 컬러코드를 사용하는 방식, ex) #FF0000, 2자리씩 16진수로 r,g,b를 표현하는 것이다.
+1. **자체 예약어**를 사용하는 방식
+2. **rgb(r,g,b,)** 함수를 사용하는 방식, 각 값은 0~255값으로 이루어진다.
+3. **rgba(r,g,b,a)** 함수를 사용하는 방식, 각 rgb값은 0~255값으로 a값은 0~1로 이루어지며 0에 가까울 수록 투명하고 1에 가까울 수록 불투명하다.
+4. **HTML 컬러코드**를 사용하는 방식, ex) #FF0000, 2자리씩 16진수로 r,g,b를 표현하는 것이다.
 
 <br>
 
@@ -65,12 +65,12 @@ font-size: clamp(최소값, 기준값, 최대값); <br>
 ### Background
 background-image: url('이미지링크'); <br>
 background-size: auto, cover, contain; <br>
-- cover의 경우 이미지의 배율을 무시하고 화면을 채우게 된다.
-- contain의 경우 이미지의 배율을 지켜 이미지를 보여준다.
+- cover의 경우 이미지의 배율을 무시하고 화면을 채우게 된다. <br>
+- contain의 경우 이미지의 배율을 지켜 이미지를 보여준다. <br>
 background-repeat: no-repeat; <br>
-- background의 size가 contain이면 배경이 반복되는 것이 default값이고, 이를 방지하기 위한 설정값.
+- background의 size가 contain이면 배경이 반복되는 것이 default값이고, 이를 방지하기 위한 설정값. <br>
 background-attachment: <br>
-- background의 배치를 설정한다.
+- background의 배치를 설정한다. <br>
 
 
 
