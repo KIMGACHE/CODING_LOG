@@ -169,7 +169,7 @@ border-radius: 10px 50px 100px; <br>
 좌측상단을 10px, (우측상단, 좌측하단)을 50px, 우측하단을 100px씩 꼭짓점을 잘라냈다. <br>
 border-radius: 10px 30px 50px 100px; <br>
 좌측상단을 기준으로 시계방향으로 적용한다. <br>
-
+<hr>
 #### OverFlow
 자식태그가 부모태그보다 더 커지는 경우에 overflow속성을 통해 수정할 수 있다.<br>
 overflow: auto; -> 스크롤을 만들어준다.<br>
