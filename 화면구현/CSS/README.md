@@ -44,19 +44,33 @@ max-height : 최대 높이 (height가 auto인 경우에는 작아지려는 성�
 <br>
 
 ### Color
-색상을 표현하는 방식
+**색상을 표현하는 방식** <br>
 1. 자체 예약어를 사용하는 방식
 2. rgb(r,g,b,)함수를 사용하는 방식, 각 값은 0~255값으로 이루어진다.
 3. rgba(r,g,b,a)함수를 사용하는 방식, 각 rgb값은 0~255값으로 a값은 0~1로 이루어지며 0에 가까울 수록 투명하고 1에 가까울 수록 불투명하다.
 4. HTML 컬러코드를 사용하는 방식, ex) #FF0000, 2자리씩 16진수로 r,g,b를 표현하는 것이다.
 
+<br>
 
+### Unit
+px : 고정크기 <br>
+% : 부모를 기준으로 백분율만큼 크기를 지정한다. <br>
+vw,vh : viewport를 기준으로 백분율만큼 크기를 기정한다. (viewport: 웹페이지가 이용자에게 보여지는 화면) <br>
+em : 부모의 글자크기를 단위로 크기를 지정한다. <br>
+rem : root(기본글자크기)를 단위로 크기를 지정한다. (default값은 16px이다.) <br>
 
-
-
-
-
-
+font-size: clamp(최소값, 기준값, 최대값); <br>
+글자 크기를 기준값으로 설정하나, 만약 기준값이 가변 크기라면 그 크기를 최소/최대값으로 제한한다는 의미. <br>
+<br>
+### Background
+background-image: url('이미지링크'); <br>
+background-size: auto, cover, contain; <br>
+- cover의 경우 이미지의 배율을 무시하고 화면을 채우게 된다.
+- contain의 경우 이미지의 배율을 지켜 이미지를 보여준다.
+background-repeat: no-repeat; <br>
+- background의 size가 contain이면 배경이 반복되는 것이 default값이고, 이를 방지하기 위한 설정값.
+background-attachment: <br>
+- background의 배치를 설정한다.
 
 
 
