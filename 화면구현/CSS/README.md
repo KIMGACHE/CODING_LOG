@@ -244,13 +244,40 @@ absolute : 상위 Box요소를 기준으로 위치 지정이 가능하다. <br>
 fixed : viewport를 기준으로 위치 지정이 가능하다. Scroll Event와 무관하게 고정된 위치를 선점한다. <br>
 sticky : Scroll영역을 기준으로 배치, Scroll위치를 따라가다가 상위 Box요소의 위치를 넘어서려고 하면 고정된다. <br>
 
-Z-index :
+Z-index : z축에서의 우선순위?를 부여할 수 있다.<br>
+```
+예를 들어,
+z-index:0;
+z-index:2;
+가 있다면 값이 더 높은 값이 앞에 위치하게 되고 낮은 값은 높은 값의 뒤에 위치하게 된다.
+```
+※ default상태, 즉 static position상태에서는 z-index가 적용되지 않는다. <br>
+꼭 Position을 설정해야만 적용이 된다. z-index의 기본 값은 0이다.<br>
 
+### Layout
+```
+display: flex;
+justify-content(수평 배치): center, space-around, space-between, space-evenly, end, start;
+(space-between: 요소요소 사이에 공간을 띄우지만 제일 가장자리는 띄우지않는다.)
+(space-around: 모든 요소와 요소 사이에 공간을 띄운다.)
+(space-between: 모든 요소와 요소 사이에 공간을 띄우고 제일 가장자리는 절반만큼만 띄운다.)
+align-items(상위태그에서,수직 배치, height고려): end, start, center
+flex-direction: row(default), row-reverse, column, column-reverse;
+(요소를 배치하는 방향을 설정할 수 있다)
 
+flex-wrap: wrap, wrap-reverse, nowrap;
+(flex가 적용된 부모의 자식이 width가 더 큰 경우 다음 줄로 넘어가는 것이 아니라 width가 자동으로 줄어든다.)
+align-self(자식태그에서,수직 배치): stretch(높이를 최대한으로 사용), flex-end(가장 아래에 배치), flex-start(가장 위에 배치);
 
+flex-grow: 1,2,3; 너비가 증가하는 비율
+flex-shrink: 1,2,3; 너비가 축소하는 비율
+flex-basis: n px; 너비가 증가하거나 축소할 때 최소 값 설정
 
+flex: (flex-grow) ((flex-shrink) (flex-basis);
+각 속성의 값을 한번에 적용 가능하다.
+```
 
-
+### Animation
 
 
 
