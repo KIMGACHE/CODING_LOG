@@ -196,4 +196,63 @@ overflow: hidden; -> 넘친부분을 가려준다.<br>
 **동위 선택자(~)** : 같은 Depth의 하위(깊이의 개념에서의 하위가 아니라 절차상에서의 아래) 모든 선택자에 적용된다. <br>
 **동위 선택자(+)** : 같은 Depth의 하위(깊이의 개념에서의 하위가 아니라 절차상에서의 아래) 1개의 선택자에 적용된다. <br>
 
+<br>
+
+**체크박스 선택자**
+```
+input[type='checkbox'] {} -> 체크박스 선택자
+input[type='checkbox']:checked {} -> 체크가 된 체크박스 선택자
+```
+<br>
+
+**의사 선택자**
+```
+a:hover {} -> 선택한 요소에 마우스를 올려뒀을 때
+a:active {} -> 선택한 요소를 클릭했을 때
+a:visited {} -> 선택한 요소에 방문했을 때
+```
+<br>
+
+**가상 선택자**
+```
+.d1::before { -> content영역 앞부분에 표시할 스타일
+   content: '표시할 내용';
+}
+.d2::after { -> content영역 뒷부분에 표시할 스타일
+   content: '표시할 내용';
+}
+```
+기본적으로 라인형이므로 width와 height가 적용되지 않는다.
+<br>
+
+**순번 요소 선택자**
+```
+ul>li:first-child{} -> 해당 요소의 첫번째 자식
+ul>li:last-child{} -> 해당 요소의 마지막 자식
+ul>li:nth-child{n} -> 해당 요소의 n번째 자식
+ul>li:nth-child{odd} -> 해당 요소의 홀수번째 자식들
+ul>li:nth-child{even} -> 해당 요소의 짝수번째 자식들
+```
+
+### Position
+position : Box의 위치를 지정할 때 사용하는 속성 <br>
+static(D) : Box요소가 문서 흐름에 따라 배치(순차적) <br>
+relative : Box요소가 문서 흐름에 따라 배치(순차적), 상위 Box요소를 기준으로 위치 지정이 가능하다. <br>
+absolute : 상위 Box요소를 기준으로 위치 지정이 가능하다. <br>
+         : 상위 Box요소가 Position설정이 되어 있어야 해당 요소를 기준으로 삼는다. <br>
+         : 상위 Box요소가 Position설정이 되어 있지 않다면 Viewport를 기준으로 위치를 지정한다. <br>
+fixed : viewport를 기준으로 위치 지정이 가능하다. Scroll Event와 무관하게 고정된 위치를 선점한다. <br>
+sticky : Scroll영역을 기준으로 배치, Scroll위치를 따라가다가 상위 Box요소의 위치를 넘어서려고 하면 고정된다. <br>
+
+Z-index :
+
+
+
+
+
+
+
+
+
+
 
