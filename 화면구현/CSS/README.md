@@ -279,7 +279,38 @@ flex: (flex-grow) ((flex-shrink) (flex-basis);
 
 ### Animation
 
+1. Transition
+   Transition은 크기변화, 위치변화에 반응한다. <br>
+   :hover와 같은 어떤 행위의 결과로 어떤 동작을 할때 딜레이를 줄 수 있다.<br>
+   ```
+   input[type='checkbox']:checked {
+      width:200px;
+      transition: 1s;
+   }
+   ```
+   딜레이는 초 단위이며 현재 크기에서 200px만큼 1초동안 변화한다.<br>
+3. Transform
+   ```
+   transform: translate(값1,값2,값3); X,Y,Z축으로 이동시킬 수 있다.
+   translateX(), translateY(), translateZ()로 해당 축으로만 이동시킬 수 있다.
 
+   transform: scale(값1, 값2,값3); XYZ축의 길이를 배수 형태로 늘릴 수 있다.
+   scaleX(), scaleY(), scaleZ()로 해당 축의 길이만 늘릴 수 있다.
+
+   transform: rotate(값deg); XYZ축을 기준으로 입력한 각도만큼 회전할 수 있다.
+   rotateX(), rotateY(), rotateZ()로 해당 축을 기준으로만 회전시킬 수 있다.
+
+   transform: skew(값deg); XY축을 기준으로 입력한 각도만큼 기울일 수 있다.
+   skewX(), skewY()
+
+   transform: translate() rotate() scale();
+   위와 같이 동시에 적용시킬 수도 있다.
+
+   transform: perspective(1000px) rotateY(180deg); 보는 시점을 1000px 떨어진 곳으로 설정할 수 있다.
+   backface-visibility: hidden; 회전 시 뒷면을 보여 줄 것인지 설정할 수 있다.
+   transition: 1s;
+   ```   
+7. Animation
 
 
 
