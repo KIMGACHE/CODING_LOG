@@ -313,11 +313,11 @@ flex: (flex-grow) ((flex-shrink) (flex-basis);
 7. Animation
    ```
    div:nth-child(1){
-      animation-name:moving1; 사용할 애니메이션의 이름
-      animation-duration: 2s; 애니메이션의 지속시간, transition과 비슷한 개념
-      animation-iteration-count: infinite; 애니메이션을 반복할 횟수
-      animation-direction: alternate; 애니메이션의 진행방향, alternate 진행한 방향 그대로 다시 되돌아오는 옵션
-      animation-timing-function: linear; 애니메이션의 진행속도, linear,ease 등 여러 함수가 존재한다.
+      animation-name:moving1; **사용할 애니메이션의 이름**
+      animation-duration: 2s; **애니메이션의 지속시간, transition과 비슷한 개념**
+      animation-iteration-count: infinite; **애니메이션을 반복할 횟수**
+      animation-direction: alternate; **애니메이션의 진행방향, alternate 진행한 방향 그대로 다시 되돌아오는 옵션**
+      animation-timing-function: linear; **애니메이션의 진행속도, linear,ease 등 여러 함수가 존재한다.**
    }
    
    @keyframes moving1 {   애니메이션을 재생할 각 프레임의 스타일을 정의하는 것이다.
