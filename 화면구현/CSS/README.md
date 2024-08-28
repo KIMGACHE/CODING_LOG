@@ -324,7 +324,7 @@ flex: (flex-grow) ((flex-shrink) (flex-basis);
             from{margin-left:100%}   애니메이션의 시작지점
             to{margin-left:0%}   애니메이션의 목적지
    }
-   margin이나 position을 통해 설정 할 수 있다.
+   margin이나 position을 통해 위치를 설정 할 수 있다.
 
    @keyframes m1{
             0%{background-color: red;}
@@ -336,5 +336,21 @@ flex: (flex-grow) ((flex-shrink) (flex-basis);
    from과 to를 사용하지 않고 애니메이션의 진행상태를 0~100%사이로 지정하여 keyframe을 설정할 수도 있다.
    ```
 
+## Media Query
+기기의 사용하는 너비와 높이에 따라서 반응해 최적화된 화면을 보여줄 때 사용한다. <br>
+
+**Media Query Device Options**
+1. all: 모든 미디어 유형에 적용
+2. print: 인쇄를 위한 미디어 타입
+3. screen: 화면 기반의 미디어 타입(주로 컴퓨터, 태블릿...)
+4. speech: 음성 출력 장치를 위한 미디어 타입
+
+<br>
+
+**Media Query 디바이스에 따른 표준 해상도**
+노트북 & 태블릿 가로 : 1024px-1279px. <br>
+태블릿 가로 : 769px-1023px. <br>
+모바일 가로 & 태블릿 세로 : 480px-767px. <br>
+모바일 : -479px. <br>
 
 
