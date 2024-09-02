@@ -78,14 +78,41 @@ const poppi = {
 ### Object Array
 배열 : 동일한 자료형의 데이터를 저장할 때 사용한다. <br>
 자바와 자바스크립트는 배열에 자료형의 종류가 동일하지 않더라도 저장할 수 있게끔 되었다.
+배열의 요소에 접근하려면 index를 사용한다.
 
 ```
 const arr2 = ['str1', 'str2', null, true, 30, {name:"홍길동", age:55},false,undefined, {name: '남길동', age:46}];
+console.log(arr2[0]);
+console.log(arr2[1]);
+console.log(arr2[2]);
 ```
 
+<br>
 
+**PUSH/POP : JS배열을 동적 확장이 가능하다.** <br>
+```
+let arr = [1,2,3];
+arr[5] = 100;
+// 현재 배열에서는 arr[2]까지밖에 없으나 arr의 5 index위치에 100을 저장하고 그 사이의 index에는 undefined가 생긴다.
 
+arr.push(10);
+arr.push(20);
+// push함수를 통해 배열의 마지막에 요소를 추가할 수 있다.
+arr.pop();
+arr.pop();
+// pop함수를 통해 배열의 마지막에 요소를 제거할 수 있다.
+```
 
+<br>
+
+**배열의 내용을 반복 순회하는 방법** <br>
+```
+1. for(초기값;조건식;탈출연산식){}
+for(i=0;i<arr.length;i++){console.log(arr[i];}
+
+2. for( 인덱스 in 배열) {}
+for( i in arr) { console.log(arr[i]);}
+```
 
 
 
