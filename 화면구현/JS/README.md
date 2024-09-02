@@ -116,6 +116,7 @@ for( i in arr) { console.log(arr[i]);}
 3. forEach( ()=>{} ) // 매우 중요
 arr.forEach((item)=>{console.log(item)});
 // 여기서 item은 인덱스가 아니라 요소 하나하나의 값을 가져오는 것이다.
+// Object에는 forEach가 먹히지 않는다.
 ```
 
 <br>
@@ -128,7 +129,7 @@ arr.sort((a,b)=>{return b-a}); // 배열을 내림차순 정렬한다.
 
 <br>
 
-**배열관련 함수 filter (매우 중요)**
+**배열관련 함수 filter (매우 중요)** <br>
 ```
 arr.filter( (배열요소)=> {어떤 요소를 걸러낼건지에 대한 조건식} )
 
@@ -141,12 +142,106 @@ let onlyNum = arr4.filter( (item)=>{return typeof item === "number"} );
 
 <br>
 
-**배열관련 함수 reduce**
+**배열관련 함수 reduce** <br>
+```
+arr.reduce((sum,item)=> {},0) // sum은 누적시킬 때 사용할 변수, item은 배열 요소, 0은 sum의 초기값을 의미
 
+let sumVal = sortedNum.reduce((sum,item)=>{return sum=sum+item),0);
+```
 
+<br>
 
+**기본 배열을 내가 원하는 형태로 바꿀 때 map** <br>
+```
+let arr = [10,20,30,40];
+let returnedArr = arr.map((item)=>{return item+'%'});
+// 각 배열의 요소에 %를 추가한 새로운 배열을 만들어 낸다.
 
+let orderList=[
+            {oid:111, name:'홍길동',addr:'대구',tel: '010-111-2222', product:'모니터', 'pid':'111-222'},
+            {oid:222, name:'남길동',addr:'울산',tel: '010-222-5555', product:'키보드', 'pid':'333-444'},
+            {oid:333, name:'서길동',addr:'창원',tel: '010-333-3333', product:'SSD', 'pid':'555-666'},
+            {oid:444, name:'동길동',addr:'김해',tel: '010-444-4444', product:'메인보드', 'pid':'777-442'},
+        ]
 
+let returnedMap = orderList.map((item)=>{
+            return {oid:item.oid, tel:item.tel};
+});
+// oid와 tel만 존재하는 새로운 배열을 만들어 낸다.
+```
 
+<br>
 
+**오픈 API를 통해 원하는 정보만 추출하기** <br>
+```
+const 한식 = 중구맛집_data.filter((item)=>{return item.FD_CS==='한식'});
+// FD_CS(음식 카테고리)가 '한식'인 맛집만 추출
 
+const 한식맛집 = 한식.map((item)=> {
+            return {"BZ_NM": item.BZ_MN, "MNU:item.MNU};
+});
+// 한식인 식당의 식당명과 메뉴종류만 추출
+
+MNU = MNU.split('<br />');
+// Split을 이용한 배열처리. <br />을 기준으로 요소를 구분한다.
+```
+<br>
+
+### ProtoType
+Object객체 : 객체를 다루는 기본함수를 제공 <br>
+Object.prototype  : 객체가 상속을 구현하는데 사용되는 메커니즘,Object객체 내에 구성 <br>
+Object.prototype의 함수들
+1. toString(): 객체를 문자열로 변환하여 반환한다.
+2. hasOwnProperty(): 객체가 특정 속성을 직접 소유하고 있는지 여부를 확인한다.
+3. isPrototypeOf(): 객체가 다른 객체의 프로토타입 체인에 존재하는지 여부를 확인한다.
+4. valueOf(): 객체의 원시 값 표현을 반환한다.
+5. toLocaleString(): 객체를 지역화된 문자열로 변환하여 반환한다.
+6. propertyIsEnumerable(): 특정 속성이 열거 가능한 속성인지 여부를 확인한다.
+7. constructor: 객체를 생성한 생성자 함수를 참조한다.
+
+```
+let obj = {name: '홍길동', age:55};
+console.log(obj)
+console.log(Object.keys(obj));
+// 오브젝트가 가진 모든 key값을 배열로 가져온다
+console.log(Object.values(obj));
+// 오브젝트가 가진 모든 value값을 배열로 가져온다.
+console.log(Object.entries(obj));
+// [key, value]형태의 배열로 반환한다. [key배열,value배열]의 형태
+
+let ob1 = {addr:'대구'}
+let ob2 = {genter: 'M'}
+console.log(Object.assign(obj,ob1,ob2));
+// obj에 ob1 ob2속성을 복사할 수 있다.
+
+Object.freeze(obj);
+// 오브젝트를 더이상 수정할 수 없게끔 만든다.
+Object.seal(obj);
+// 새 속성 추가 불가
+```
+
+## JavaScript 연산자
+### 산술 연산자
+1. +
+2. -
+3. *
+4. /
+5. %
+6. ++
+7. --
+
+<br>
+
+++,--(증감연산자) : 변수안의 값을 1증가(++) or 1감소(--)에 사용되는 연산자 <br>
+++a : a안의 값을 1증가한 뒤 다른 연산을 처리 <br>
+a++ : 다른 연산처리 이후 a안의 값을 1증가 <br>
+
+<br>
+
+### 할당 연산자
+1. =
+2. += (더해서 할당)
+3. -= (빼서 할당)
+4. *= (곱해서 할당)
+5. /= (나눠서 할당)
+6. %= (나머지를 할당)
