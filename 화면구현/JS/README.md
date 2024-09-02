@@ -112,16 +112,36 @@ for(i=0;i<arr.length;i++){console.log(arr[i];}
 
 2. for( 인덱스 in 배열) {}
 for( i in arr) { console.log(arr[i]);}
+
+3. forEach( ()=>{} ) // 매우 중요
+arr.forEach((item)=>{console.log(item)});
+// 여기서 item은 인덱스가 아니라 요소 하나하나의 값을 가져오는 것이다.
 ```
 
+<br>
 
+**배열 정렬 함수 sort** <br>
+```
+arr.sort(); // 기본값으로 배열을 오름차순 정렬한다.
+arr.sort((a,b)=>{return b-a}); // 배열을 내림차순 정렬한다.
+```
 
+<br>
 
+**배열관련 함수 filter (매우 중요)**
+```
+arr.filter( (배열요소)=> {어떤 요소를 걸러낼건지에 대한 조건식} )
 
+let arr4 = [10,15.2, 't1', 't2', 30, true, null, 100, {name:'홍길동', age:55}, 20];
+let onlyNum = arr4.filter( (item)=>{return typeof item === "number"} );
 
+// 중괄호를 넣는다면 filter에서 조건식 전에 return을 적어주고
+// 중괄호를 넣지않을거라면 return을 적지않고 조건식을 적어주면 된다.
+```
 
+<br>
 
-
+**배열관련 함수 reduce**
 
 
 
