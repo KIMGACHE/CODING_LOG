@@ -222,6 +222,7 @@ Object.seal(obj);
 
 ## JavaScript 연산자
 ### 산술 연산자
+```
 1. +
 2. -
 3. *
@@ -229,24 +230,26 @@ Object.seal(obj);
 5. %
 6. ++
 7. --
-
+```
 <br>
-
+```
 ++,--(증감연산자) : 변수안의 값을 1증가(++) or 1감소(--)에 사용되는 연산자 <br>
 ++a : a안의 값을 1증가한 뒤 다른 연산을 처리 <br>
 a++ : 다른 연산처리 이후 a안의 값을 1증가 <br>
-
+```
 <br>
 
 ### 할당 연산자
+```
 1. =
 2. += (더해서 할당)
 3. -= (빼서 할당)
 4. *= (곱해서 할당)
 5. /= (나눠서 할당)
 6. %= (나머지를 할당)
-
+```
 ### 비교 연산자
+```
 1. ==
 2. ===
 3. !=
@@ -256,12 +259,13 @@ a++ : 다른 연산처리 이후 a안의 값을 1증가 <br>
 7. >=
 8. <=
    
-```
 console.log('123' == 123); // true
 console.log('123' === 123); // false, value와 자료형을 함께 일치여부 확인
 ```
+<br>
 
 ### 논리 연산자 & 비트 연산자
+```
 1. && (논리 AND) - 모든 조건식이 참이어야 참을 반환한다.
 2. || (논리 OR) - 조건식 중 하나라도 참이면 참을 반환한다.
 3. ! (논리 NOT)
@@ -272,3 +276,117 @@ console.log('123' === 123); // false, value와 자료형을 함께 일치여부 
 8. << (왼쪽 시프트)
 9. >> (오른쪽 시프트)
 10. >>> (부호 없는 오른쪽 시프트)
+```
+<br>
+
+### 삼항 조건 연산자
+```
+조건문 ? 참일 때 실행할 식 : 거짓일 때 실행할 식
+
+let num=11;
+
+(num>10) ? console.log(num,'은 10보다 큽니다.') : console.log(num,'은 10보다 작거나 같습니다.');
+```
+<br>
+
+## JavaScript 흐름제어문
+### if
+```
+if(조건문) {
+            참일 때 실행문
+} else if(조건문) {
+            참일 때 실행문
+} else {
+            위의 조건이 모두 거짓일 때 실행문
+}
+
+if(window.innerWidth <= 400 ) {
+            document.body.style.backgroundColor="green";
+} else {
+            document.body.style.backgroundColor="orange";
+}
+```
+<br>
+
+### for
+```
+// 기본 for
+for(초기값;조건식;탈출연산식){}
+
+document.write("<ul>");
+for(i=1;i<=4;i++){
+            document.write(`<li>${i}</li>`);
+}
+document.write("</ul>");
+
+//----------------------------
+// 개량 for
+for( 인덱스 in 배열) {}
+
+const data=중구맛집.data;
+const one = data[0];
+for(key in one) {
+            console.log(key,one[key]);
+}
+```
+<br>
+
+## JavaScript 함수
+**함수(function)** : 데이터를 받아 특정 처리를 하는 논리적 공간 <br>
+
+1. 기본형태
+   function 함수명(인자) {
+            처리할 식
+            return 반환할 값;
+   }
+   인자와 return값은 있어도, 없어도 된다.
+   
+3. 반환자료형의 Object처리
+   여러개의 값을 반환해야한다면 Object를 만들어 하나만 반환한다.
+   function f1(n1,n2,n3) {
+            return {arg1:n1, arg2:n2, arg3:n3};
+   }
+   
+5. 가변인자
+   인자의 개수를 따로 지정하지 않는다.
+   function f2(...args){
+            console.log(args);
+   }
+   혹은 인자에 (n1,n2,...args)처럼 고정된 인자를 넣고 이후를 가변인자로 설정해도 된다.
+
+<br>
+
+**Hosting** : 코드가 실행되기 전 변수선언/함수선언이 해당 스코프의 최상단으로 끌어 올려진 것 같은 현상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
