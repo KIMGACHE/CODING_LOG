@@ -380,8 +380,30 @@ f2();
 - 호이스팅 방식은 코드구조를 무너뜨린다. <br>
 - 호이스팅 방식은 절차대로 처리되지 않아 혼란을 야기할 수 있다. <br>
 
+<br>
 
+**Closure 함수** <br>
+내부함수가 외부함수의 변수를 사용할 수 있고, 외부함수는 내부함수가 실행되기전에 내부함수를 반환한다.
+```
+function outer(){
+const func = ()=>{
+            //상태값
+            let num=0;
 
+            //num의 값을 증가하는데 사용되는 함수
+            const setNum = (n)=>{num+=n}
+
+            //num의 값을 확인하는데 사용되는 함수
+            const getNum = ()=>{
+                console.log("getNum Call..")
+                return num;
+            }
+
+            return { set: setNum, get: getNum};
+        }
+        const closure = func();
+        console.log(closure.get());
+```
 
 
 
