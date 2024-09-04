@@ -405,9 +405,46 @@ const func = ()=>{
         console.log(closure.get());
 ```
 
+<br>
 
+**콜백함수(CallBack)** <br>
+함수를 호출하는 시점이 바뀐 형태의 함수. <br>
+기존방식: 사용자(개발자)가 함수를 직접 정의하고 정의된 함수를 호출(Call)하여 결과를 반환받는 방식. <br>
+CallBack: 콜백함수의 인자로 로직이 담긴 함수(함수주소)를 전달하여 콜백함수로부터 처리된 결과를 반환받는 방식.
 
+```
+// 일반 함수
+function func(n1,n2){
+            console.log("func(n1,n2) Call!");
+            return n1+n2;
+}
 
+// 콜백 함수
+function callBackFunc(n1,n2,logic) {
+            const v = logic(n1,n2);
+            console.log(v);
+}
+callBackFunc(100,200,func);
+
+// func의 함수 위치를 인자로 전달하고 콜백함수에서는 함수를 전달받고 내부적으로 실행한다.
+// 즉, 함수를 인자로 받아 해당 함수를 이용하는 함수이다.
+
+// 콜백 함수로 삽입정렬 만들기
+function callBack3(array,func) {
+            let tmp = 0;
+            for(i=0; i<array.length-1;i++){
+                        for(j=i+1;j<array.length;j++){
+                                    if(func(array[j],array[i])<=0) {
+                                                tmp=array[i];
+                                                array[i] = array[j];
+                                                array[j] = tmp;
+                                    }
+                        }
+            }
+}
+arr2 = [10,2,4,5,1,3,5,7,6];
+callBack3(arr2, (a,b)=>{return a-b});
+```
 
 
 
