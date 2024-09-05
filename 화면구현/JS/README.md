@@ -445,8 +445,22 @@ function callBack3(array,func) {
 arr2 = [10,2,4,5,1,3,5,7,6];
 callBack3(arr2, (a,b)=>{return a-b});
 ```
+<br>
 
-
+## 이벤트 처리
+### 기본노드검색
+1. getElement
+   - 단일 오브젝트를 반환한다. getElementById()
+3. getElements
+   - 배열 형태로 반환한다.
+   - getElementsByClass()
+   - getElementsByName()
+   - getElementsByTag()
+   - getElementsByTagNameNs()
+3. querySelector()
+   - 어떤 선택자든 들어올 수 있지만 단일 node만 선택한다. 선택자가 여러개의 node를 가리킬 경우 가장 첫번째 node를 선택한다.
+5. querySelectorAll()
+   - 어떤 선택자든 들어올 수 있고, 여러 node를 한번에 찾는다. nodelist형태로 가져오므로 배열 메서드를 사용할 수 있다.
 
 
 
