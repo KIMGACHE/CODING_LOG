@@ -500,20 +500,31 @@ btnEls.forEach((el,idx)=>{ // 탐색되는 요소요소마다 index를 부여하
 <br>
 
 ### 이벤트처리
-기본 형태 : .addEventListener('이벤트형태',()=>{이벤트})
+기본 형태 : .addEventListener('이벤트형태',(e)=>{이벤트})
 <br>
 1. 마우스
    - 'click' : 해당 element를 클릭했을 때
    - 'mouseover' : 마우스를 해당 element바깥에서 안으로 옮겼을 때
    - 'mouseleave' : 마우스를 해당 element안에서 바깥으로 옮겼을 때
-   - 'dragend'
    - 'dbclick' : 해당 element에서 더블 클릭했을 때
-   - 'drop'
+   - 'drop' : element를 드래그했다가 놓았을 때
+   - clientX,clientY : 사용자 시점에서의 마우스의 X,Y좌표를 알 수 있는 속성
+   - pageX, pageY : 페이지 시점에서의 마우스의 X,Y좌표를 알 수 있는 속성
 3. 키보드
-4. 채팅창
-5. 체크박스
-6. 스크롤
-7. 사이즈조정
+   - 'keyup': 키보드가 (내려간 상태에서) 올라올 때
+   - 'keydown': 키보드가 내려갈 때
+   - 'keypress': 키보드를 계속 누를 때
+   - key : 해당 이벤트가 발생했을 때 눌러진 문자열을 나타낸다.
+   - keyCode : 해당 이벤트가 발생했을 때 눌러진 문자열의 아스키코드를 나타낸다(keypress의 경우 아스키코드가 대소문자를 구분하지만
+   - enter를 제외한 대부분의 escape문자를 인식하지 못한다.ex) alt,ctrl,tap,esc,backspace
+6. 체크박스
+   - 'change': 체크박스의 상태가 변화할 때
+   - e.target.checked: 체크박스가 체크되어있으면 true를 체크되어있지않으면 false를 반환한다.
+8. 스크롤
+   - 'scroll': 스크롤 이벤트
+   - window.scrollX : 문서의 수평 스크롤의 위치값을 반환한다. 뷰포트에서 가장 왼쪽의 가로축을 기준으로 한다.
+   - window.scrollY : 문서의 수직 스크롤의 위치값을 반환한다. 뷰포트에서 가장 위쪽의 세로축을 기준으로 한다.
+10. 사이즈조정
 
 
 
