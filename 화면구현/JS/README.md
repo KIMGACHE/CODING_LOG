@@ -462,24 +462,58 @@ callBack3(arr2, (a,b)=>{return a-b});
 5. querySelectorAll()
    - 어떤 선택자든 들어올 수 있고, 여러 node를 한번에 찾는다. nodelist형태로 가져오므로 배열 메서드를 사용할 수 있다.
 
+<br>
 
+**FORM 검색** <br>
+```
+// 모든 form찾기, 유사배열형태로 반환되고 (key, value)형태로 저장되어 있다.
+const formEls = document.forms;
 
+// 개별 form 접근
+console.log(formEls[0]);
+console.log(formEls[1]);
+console.log(formEls[2]);
 
+// name으로 개별 form에 접근
+const formEl = document.frm2; // name="frm2"
+formEl.userid.value='aaa';
+formEl.action="abc.jsp"
+formEl.submit();
+// userid는 form안에 있는 input type의 name이고 action은 form을 전송할 곳을 지정한다.
+```
+<br>
 
+**ClassList** <br>
+해당 요소가 가지고 있는 모든 Class를 리스트화 해준다.<br>
+add()와 remove()를 통해 class를 추가하고 삭제할 수 있다.
+```
+const btnEls = document.querySelectorAll('.btn');
+btnEls.forEach((el,idx)=>{ // 탐색되는 요소요소마다 index를 부여하는데 그 index를 가져올 수 있다
+   el.addEventListener('mouseover', ()=>{
+            el.classList.add(`btn--st${idx}`);
+   })
+   el.addEventListener('mouseleave', ()=>{
+            el.classList.remove(`btn--st${idx}`);
+   })
+})
+```
+<br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+### 이벤트처리
+기본 형태 : .addEventListener('이벤트형태',()=>{이벤트})
+<br>
+1. 마우스
+   - 'click' : 해당 element를 클릭했을 때
+   - 'mouseover' : 마우스를 해당 element바깥에서 안으로 옮겼을 때
+   - 'mouseleave' : 마우스를 해당 element안에서 바깥으로 옮겼을 때
+   - 'dragend'
+   - 'dbclick' : 해당 element에서 더블 클릭했을 때
+   - 'drop'
+3. 키보드
+4. 채팅창
+5. 체크박스
+6. 스크롤
+7. 사이즈조정
 
 
 
