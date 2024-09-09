@@ -551,24 +551,55 @@ ex) 홈페이지 자체를 서버에서 받을 때 서버에 요청한 응답이
 **비동기(Asynchronous)** : 약속된 규칙대로 동작하지 않고 특정한 방식으로 동작하는 방식, 절차대로 코드를 실행하지 않는다는 것. <br>
 ex) 홈페이지 내에 부분적으로 요청을 보내고 응답을 받을 때 나머지 부분은 요청하던 말던 알아서 동작하는 것 <br>
 
-1. setTimeout : 일정 시간 이후 특정작업을 수행한다. 변수로 저장하면 예약번호를 반환받을 수 있다.
+1. **setTimeout** : 일정 시간 이후 특정작업을 수행한다. 변수로 저장하면 예약번호를 반환받을 수 있다.
    ```
    reservedId = setTimeout(() => {
       d1.innerHTML += "HELLOWORLD";
    }, 3000);
    ```
-3. clearTimeout : setTimeout의 예약번호를 받아 해당 예약을 취소할 수 있다.
+3. **clearTimeout** : setTimeout의 예약번호를 받아 해당 예약을 취소할 수 있다.
    ```
    clearTimeout(reservedId);
    ```
-5. setInterval : 종료신호를 주기전까지 일정 주기로 코드를 계속 반복하여 실행한다. 변수로 저장하여 해당 작업의 index를 반환받는다.
+5. **setInterval** : 종료신호를 주기전까지 일정 주기로 코드를 계속 반복하여 실행한다. 변수로 저장하여 해당 작업의 index를 반환받는다.
    ```
    id=setInterval(()=>{
       box1.innerHTML+=`Batch start ${++count}`;
    },1000);
    ```
-7. clearInterval : setInterval의 index를 받아 해당 작업을 취소할 수 있다.
+7. **clearInterval** : setInterval의 index를 받아 해당 작업을 취소할 수 있다.
    ```
    clearInterval(id);
    ```
-9. async/await
+9. **async/await**
+    - async: 해당 함수가 비동기적인 처리를 하는 프로세스임을 암시
+    - await: async블럭 내부에서 사용되며 다른 비동기 작업이 완료될때까지 대기하는 예약어
+    - Promise: 비동기 요청 객체, 요청이 성공했을 때와 실패했을 때를 나누어 처리가 가능하다.
+```
+function sub_process_exe(val){
+   return new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+         resolve(val); // 비동기 요청이 성공했을 때 전달되는 값
+      },3000);
+   });
+}
+
+async function sub_process_func() {
+await sub_process_exe(1)                                                                                                    
+                .then((response)=>{
+                    console.log('response',response);
+                    sub1.innerHTML+=`${response}-Thread Run`
+                })
+                .catch(()=>{})
+
+await sub_process_exe(2)
+                .then((response)=>{
+                    console.log('response',response);
+                    sub2.innerHTML+=`${response}-Thread Run`
+
+                })
+                .catch(()=>{})
+}
+sub_process_func();
+// 해당 함수를 실행시켜보면 동시에 동작하는 것이아니라 sub1,sub2가 순서대로 동작한다.
+```
