@@ -525,6 +525,26 @@ btnEls.forEach((el,idx)=>{ // 탐색되는 요소요소마다 index를 부여하
    - window.scrollX : 문서의 수평 스크롤의 위치값을 반환한다. 뷰포트에서 가장 왼쪽의 가로축을 기준으로 한다.
    - window.scrollY : 문서의 수직 스크롤의 위치값을 반환한다. 뷰포트에서 가장 위쪽의 세로축을 기준으로 한다.
 10. 사이즈조정
+    - 'resize': 사이즈에 따른 이벤트
+    - window.innerWidth : 브라우저 윈도우 두께를 제외한 실질적 가로너비
+    - wondow.outerWidth : 브라우저 윈도우 두께를 포함한 전체 가로너비
+12. 페이지로드
+    - 'DOMContentLoaded': 사이즈 조정 이벤트는 사이즈가 변경되었을 때의 이벤트지 페이지가 로드되었을 당시의 사이즈에 이벤트가 적용되지 않는다.
+
+<br>
+
+### Node CRUD
+1. 생성
+   document.createElement('태그명') : 해당 태그명을 가진 요소를 생성한다.
+   '부모Node'.appendChild(대상) : 부모노드의 자식으로 대상을 추가한다. 이때 가장 아래에 추가된다.
+   '부모Node'.prepend(대상) :  부모노드의 자식으로 대상을 추가한다. 이때 가장 위에 추가된다.
+3. 삭제
+   '부모Node'.removeChild(대상) : 부모노드의 자식들 중 대상을 제거한다.
+5. 수정
+   input태그의 내용을 수정한다면 readOnly의 값을 true/false로 설정함에 따라 입력을 비활성/활성이 가능하다.
+   item
+
+
 
 
 
