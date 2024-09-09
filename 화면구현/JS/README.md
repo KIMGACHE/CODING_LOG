@@ -563,15 +563,12 @@ ex) 홈페이지 내에 부분적으로 요청을 보내고 응답을 받을 때
    ```
 5. setInterval : 종료신호를 주기전까지 일정 주기로 코드를 계속 반복하여 실행한다. 변수로 저장하여 해당 작업의 index를 반환받는다.
    ```
-  id=setInterval(()=>{
-     box1.innerHTML+=`Batch start ${++count}`;
-  },1000);
+   id=setInterval(()=>{
+      box1.innerHTML+=`Batch start ${++count}`;
+   },1000);
    ```
 7. clearInterval : setInterval의 index를 받아 해당 작업을 취소할 수 있다.
    ```
    clearInterval(id);
    ```
-5. async/await
-   ```
-
-```
+9. async/await
