@@ -603,3 +603,4 @@ await sub_process_exe(2)
 sub_process_func();
 // 해당 함수를 실행시켜보면 동시에 동작하는 것이아니라 sub1,sub2가 순서대로 동작한다.
 ```
+<br>
