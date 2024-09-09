@@ -535,17 +535,43 @@ btnEls.forEach((el,idx)=>{ // 탐색되는 요소요소마다 index를 부여하
 
 ### Node CRUD
 1. 생성
-   document.createElement('태그명') : 해당 태그명을 가진 요소를 생성한다.
-   '부모Node'.appendChild(대상) : 부모노드의 자식으로 대상을 추가한다. 이때 가장 아래에 추가된다.
-   '부모Node'.prepend(대상) :  부모노드의 자식으로 대상을 추가한다. 이때 가장 위에 추가된다.
+   document.createElement('태그명') : 해당 태그명을 가진 요소를 생성한다. <br>
+   '부모Node'.appendChild(대상) : 부모노드의 자식으로 대상을 추가한다. 이때 가장 아래에 추가된다. <br>
+   '부모Node'.prepend(대상) :  부모노드의 자식으로 대상을 추가한다. 이때 가장 위에 추가된다. <br>
 3. 삭제
-   '부모Node'.removeChild(대상) : 부모노드의 자식들 중 대상을 제거한다.
+   '부모Node'.removeChild(대상) : 부모노드의 자식들 중 대상을 제거한다. <br>
 5. 수정
-   input태그의 내용을 수정한다면 readOnly의 값을 true/false로 설정함에 따라 입력을 비활성/활성이 가능하다.
-   item
+   input태그의 내용을 수정한다면 readOnly의 값을 true/false로 설정함에 따라 입력을 비활성/활성이 가능하다. <br>
+   item.readOnly=true // 비활성화 <br>
 
+## SYNC
+**동기(Synchronous)** : 미리 약속된 규칙을 근거로 동작하는 방식, 절차대로 코드를 실행한다는 것. <br>
+ex) 홈페이지 자체를 서버에서 받을 때 서버에 요청한 응답이 오기전까지는 아무것도 실행되지 않는 것.<br>
+<br>
+**비동기(Asynchronous)** : 약속된 규칙대로 동작하지 않고 특정한 방식으로 동작하는 방식, 절차대로 코드를 실행하지 않는다는 것. <br>
+ex) 홈페이지 내에 부분적으로 요청을 보내고 응답을 받을 때 나머지 부분은 요청하던 말던 알아서 동작하는 것 <br>
 
+1. setTimeout : 일정 시간 이후 특정작업을 수행한다. 변수로 저장하면 예약번호를 반환받을 수 있다.
+   ```
+   reservedId = setTimeout(() => {
+      d1.innerHTML += "HELLOWORLD";
+   }, 3000);
+   ```
+3. clearTimeout : setTimeout의 예약번호를 받아 해당 예약을 취소할 수 있다.
+   ```
+   clearTimeout(reservedId);
+   ```
+5. setInterval : 종료신호를 주기전까지 일정 주기로 코드를 계속 반복하여 실행한다. 변수로 저장하여 해당 작업의 index를 반환받는다.
+   ```
+  id=setInterval(()=>{
+     box1.innerHTML+=`Batch start ${++count}`;
+  },1000);
+   ```
+7. clearInterval : setInterval의 index를 받아 해당 작업을 취소할 수 있다.
+   ```
+   clearInterval(id);
+   ```
+5. async/await
+   ```
 
-
-
-
+```
