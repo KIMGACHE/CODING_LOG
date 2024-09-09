@@ -353,4 +353,17 @@ flex: (flex-grow) ((flex-shrink) (flex-basis);
 모바일 가로 & 태블릿 세로 : 480px-767px. <br>
 모바일 : -479px. <br>
 
+```
+// 해당 파일 스타일 태그내에서 미디어 쿼리를 적용시키는 방법
+@media all and (max-width: 1024px) {
+   div{background-color:green;}
+}
+@media all and (max-width:480px) {
+   div{background-color: royalblue;}
+}
+
+// 외부 파일을 링크하여 미디어 쿼리를 적용시키는 방법
+<link rel="stylesheet" href="./css/tablet.css" media="all and (max-width:1024px)">
+<link rel="stylesheet" href="./css/mobile.css" media="all and (max-width:480px)">
+```
 
