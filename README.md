@@ -38,3 +38,8 @@ ESCAPE문자 :
 %f : 실수 서식문자
 %c : 문자 서식문자
 %s : 문자열 서식문자
+
+자동 줄바꿈 System.out.println();
+""를 출력하고싶을 때
+System.out.println("I SAY \"HELLO\"");
+"앞에 \를 사용한다.
