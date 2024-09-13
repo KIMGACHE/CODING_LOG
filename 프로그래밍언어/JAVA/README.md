@@ -269,6 +269,8 @@ switch(조건식에 사용할 변수) {
    default :
    	모든 조건이 거짓일 때 실행코드;
 }
+<br>
+
 ```
 int ranking = 2;
 char medalColor;
@@ -283,12 +285,23 @@ switch(ranking) {
 	medalColor='C';
 }
 ```
+<br>
 
+**WHILE문**
+while(조건식) { <br>
+   조건식이 참인 경우 실행되는 종속 문장(1개의 행일 때는 생략가능) <br>
+} <br>
+<br>
+while문을 사용하려면 **탈출용 변수**, **탈출을 위한 조건식**, **탈출을 위한 연산식**이 필요하다.
+<br>
 
-
-
-
-
+```
+int count = 0; // 탈출용 변수
+while(count<5) { // 탈출을 위한 조건식
+   System.out.println("HELLO WORLD");
+   count++; // 탈출을 위한 연산식
+}
+```
 
 
 
