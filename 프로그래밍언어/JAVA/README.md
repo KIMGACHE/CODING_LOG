@@ -223,7 +223,7 @@ Scanner객체를 main함수내에서 제어(접근,사용)할 수 있도록 sc�
 ex) int num 3 = 15 << 3; -> 120
 
 ### 조건문
-IF문 <br>
+**IF문** <br>
 if(조건식) <br>
 { <br>
 참인 경우 실행되는 종속문장 <br>
@@ -237,12 +237,14 @@ if(age < 8) {
 }
 ```
 <br>
-IF-ELSE문 <br>
+
+**IF-ELSE문** <br>
 if(조건식) { <br>
    참인 경우 실행되는 종속문장 <br>
 } else { <br>
    거짓인 경우 실행되는 종속문장 <br>
 } <br>
+
 ```
 if (age >=8) {
    System.out.println("학교에 다닙니다.");
@@ -251,7 +253,36 @@ if (age >=8) {
 }
 ```
 
+<br>
 
+**switch문** <br>
+switch(조건식에 사용할 변수) {
+   case 조건에 사용될 변수의 값:
+   	조건이 참일때 실행코드;
+    	break;
+   case 조건에 사용될 변수의 값:
+   	조건이 참일때 실행코드;
+    	break;
+   case 조건에 사용될 변수의 값:
+   	조건이 참일때 실행코드;
+    	break;
+   default :
+   	모든 조건이 거짓일 때 실행코드;
+}
+```
+int ranking = 2;
+char medalColor;
+switch(ranking) {
+   case 1:
+	medalColor='G';
+	break;
+   case 2:
+	medalColor='S';
+	break;
+   default:
+	medalColor='C';
+}
+```
 
 
 
