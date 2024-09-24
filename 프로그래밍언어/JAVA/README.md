@@ -344,3 +344,106 @@ Scanner sc = new Scanner(System.in);
 멤버 변수 : 클래스 내의 멤버로 사용되는 변수 ( 속성 저장 ) <br>
 지역 변수 : {}내에서 선언되는 변수, {}를 벗어난다면 공간 반환, 변수명 중복시 좁은 지역의 변수가 적용
 전역 변수 : static 변수
+
+### 매서드 오버로딩
+매서드 이름은 동일하지만 파라미터가 다른 여러 매서드를 만드는 것을 말한다.<br>
+조건<br>
+1. 매서드 이름이 같아야 한다.
+2. 파라미터의 개수 또는 자료형이 달라져야 한다.
+3. 파라미터는 같고 리턴 변수의 자료형이 달라지면 안된다.
+<br>
+```
+int sum(int x, int y) {
+   System.out.println("int sum(int x, int y)");
+return x+y;
+int sum(int x, int y, int z) {
+   System.out.println("int sum(int x, int y, int z)");
+return x+y+z;
+int sum(double x, double y, double z) {
+   System.out.println("int sum(double x, double y, double z)");
+return (int)(x+y+z);
+}
+```
+
+## 정보은닉과 캡슐화
+**정보 은닉** : 정보를 숨기는 것 <br>
+왜 사용할까? 민감한 데이터에 접근할 수 없도록 하기 위해 <br>
+<br>
+**접근 한정자**
+**public**: 모든 클래스에서 접근이 가능하다.<br>
+**protected**: 동일 패키지에 속한 클래스 및 서브 클래스에서 접근이 가능하다.<br>
+**default**: 동일 패키지에 속한 클래스에서만 접근을 허용한다. 한정자를 사용하지 않았을 때의 기본값이다.<br>
+**private**: 현재 클래스에서만 접근이 가능하다.<br>
+<br>
+**캡슐화**<br>
+캡슐화 : 생성한 객체를 어떤 매서드와 어떤 필드로 어떻게 일을 수행할 지 외부에 숨기는 것.<br>
+**특정 목적을 가지는 기능 구현에 있어서 각 과정의 일부나 전부가 외부로 노출되는 문제를 막기 위해 정보은닉을 수반한다.** <br>
+정보은닉을 할 수도 있고 필요치 않으면 노출시킬 수도 있다.(필수는 아니다.)<br>
+
+### this
+1. 멤버변수, 매개변수를 구별하는데 사용한다.
+2. 다른 생성자를 호출하는데 사용한다.
+```
+thisMain(int x, int y) {this.x = x; this.y = y;}
+thisMain(int x) {this(x,0);} // 첫번째 생성자를 호출
+thisMain() {this(0,0);} // 첫번째 생성자를 호출
+```
+<br>
+
+## 배열
+### 원시타입 배열
+원시타입[] 배열명 = new 원시타입[사이즈]; <br>
+
+### 얕은복사 / 깊은복사
+1. 얕은복사(주소복사)
+   ```
+   int arr1[] = {10,20,30};
+   int arr2[];
+   arr2 = arr1;
+   // arr1의 값이 변경되면 arr2의 값도 변경된다. 서로 같은 메모리 주소를 사용하기 때문.
+   ```
+3. 깊은복사(값복사)
+   ```
+   int arr3[] = new int[3];
+   for(int i=0; i<arr3.length;i++){
+	arr3[i] = arr1[1];
+   }
+   // arr3에 arr1의 값을 복사한다. arr1의 값이 변경된다고 arr3의 값이 변경되지는 않는다.
+   ```
+### 클래스타입 배열
+```
+class classArr {
+   String name;
+   int age;
+
+   classArr() {
+      super();
+      this.name=name; this.age=age;
+   }
+}
+
+public class C04클래스타입배열 {
+   public static void main(String[] args) {
+      classArr list[] = new classArr[3]; // classArr클래스타입의 배열을 선언
+      list[0] = new classArr(); // 이때 생성자를 통해 객체를 생성하지 않고 아래의 변수를 설정하게 되면 에러가 발생한다.
+      list[0].name = "홍길동"; // 객체를 생성하지 않으면 각 배열의 인덱스에는 class타입의 기본값인 null이 들어가게되고
+      list[0].age = 55; // null.멤버변수에 접근 할 수 없기 때문이다.
+   }
+}
+```
+
+### static
+static : 클래스 매서드와 클래스 변수를 선언하는데 사용한다.<br>
+static은 자바의 정적 영역에 할당되는 리소스를 선언하는데 사용하며 동일 가상머신상에서 실행중인 모든 클래스에서 공유한다.<br>
+객체를 생성하지 않고도 클래스의 매서드나 멤버에 접근할 수있다. <br>
+
+
+
+
+
+
+
+
+
+
+
