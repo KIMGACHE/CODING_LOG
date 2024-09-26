@@ -390,7 +390,6 @@ thisMain() {this(0,0);} // 첫번째 생성자를 호출
 ```
 <br>
 
-## 배열
 ### 원시타입 배열
 원시타입[] 배열명 = new 원시타입[사이즈]; <br>
 
@@ -437,10 +436,24 @@ static : 클래스 매서드와 클래스 변수를 선언하는데 사용한다
 static은 자바의 정적 영역에 할당되는 리소스를 선언하는데 사용하며 동일 가상머신상에서 실행중인 모든 클래스에서 공유한다.<br>
 객체를 생성하지 않고도 클래스의 매서드나 멤버에 접근할 수있다. <br>
 
+**static변수를 이용한 SingletonPattern** <br>
+어떤 클래스의 객체를 단 하나만 생성하고 해당 객체를 공유하여 사용하는 방식 <br>
+```
+class Company {
+	int n1;
+	int n2;
+	
+	private static Company instance; // instance라는 멤버변수, static
+	private Company() {} // 외부에서 Company 객체를 생성하지 못하게 막는다.
+	public static Company getInstance() {
+		if(instance==null)
+			instance = new Company(); // 객체를 아무도 만들지 않았을 때 객체생성
+		return instance; // 객체가 이미 존재한다면 존재하는 객체 리턴
+	}
+}
+```
 
-
-
-
+## 상속
 
 
 
