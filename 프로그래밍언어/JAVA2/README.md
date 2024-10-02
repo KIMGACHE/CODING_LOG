@@ -188,8 +188,20 @@ while(iter.hasNext()) {
    - void clear() : 모든 Map.Entry(키와 값)을 삭제한다.
    - V remove(Object key) : 주어진 키와 일치하는 Map.Entry를 삭제하고 값을 리턴한다.
 
+## GUI - Swing
+```
+JFrame frame = new JFrame("Title");
+frame.setBounds(x좌표,y좌표,가로길이,세로길이);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 기본 종료 버튼 생성
+frame.setVisible(true); // 화면상에 frame생성
 
-
+class C02GUI extends JFrame {
+   C02GUI() {
+      super("두번째 프레임입니다.");
+      setBounds(100,100,500,500);
+   }
+}
+```
 
 
 
