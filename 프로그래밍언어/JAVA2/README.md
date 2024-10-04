@@ -202,6 +202,32 @@ class C02GUI extends JFrame {
    }
 }
 ```
+## 자바 입출력
+I/O(Input/Output), 자바에서는 java.io패키지로 다양한 입출력 기능을 제공한다.<br>
+**키보드,파일** => (입력스트림) => 프로그램 => (출력스트림) => **모니터,파일,프린터** <br>
+<br>
+스트림(Stream)은 입출력 장치와 프로그램 간 데이터 전송 통로를 말한다.<br>
+단방향 통신을 제공하기 때문에 입력과 출력을 처리하려면 두개의 스트림이 필요하다.<br>
+스트림은 크게 문자 스트림과 바이트 스트림으로 구분된다. <br>
+<br>
+1. 문자스트림
+   - Reader
+   - Writer
+3. 바이트스트림
+   - InputStream
+   - OutputStream
+<br>
+**InputStream클래스의 주요 메서드** <br>
+- int read() : 추상 메서드로 입력스트림에서 한 바이트씩 읽어서 0~255사이의 값 리턴, 끝에 도달하여 읽을 수 없을 때 -1 리턴
+- int read(byte[] b) : b의 크기만큼 읽어와 b에 저장하고, 읽어 온 바이트 개수를 리턴한다. 끝에 도달하면 -1 리턴
+- int read(byte[] b, int off, int len) : 최대 len만큼 읽어 b의 off위치에 저장하고, 읽은 바이트 개수를 리턴. 끝에 도달하면 -1 리턴
+- int available() : 읽을 수 있는 바이트 개수를 리턴한다.
+- void close() : 입력 스트림을 닫아 스트림과 관련된 시스템 자원을 반환한다.
 
-
+**OutputStream클래스의 주요 메서드** <br>
+- int write(int b) : b의 하위 8비트를 출력한다.
+- int write(byte[] b) : b의 내용을 출력한다.
+- int write(byte[] b, int off, int len) : b의 off위치부터 len만큼 바이트를 출력한다.
+- int flush() : 버퍼에 남은 바이트를 출력한다.
+- void close() : 출력 스트림을 닫아 스트림과 관련된 시스템 자원을 반환한다.
 
