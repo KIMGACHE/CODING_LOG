@@ -217,6 +217,19 @@ I/O(Input/Output), 자바에서는 java.io패키지로 다양한 입출력 기�
    - InputStream
    - OutputStream
 <br>
+**Reader클래스의 주요 메서드** <br>
+- int read() : 단일 문자를 하나 읽어와 읽은 문자의 유니코드값을 리턴한다.
+- int read(char[] b) : 문자를 b의 크기만큼 읽어 b에 저장하고, 읽은 문자 개수를 리턴한다.
+- abstract int read(byte[] b, int off, int len) : len만큼 읽어 b의 off위치에 저장하고, 실제 읽어 온 문자 개수를 리턴한다.
+
+**Writer클래스의 주요 메서드** <br>
+- void write(String s) : 문자열 s를 출력한다.
+- void write(char[] b) : char 배열 b를 출력한다.
+- void write(char[] b, int off, int len) : b의 off위치부터 len만큼 문자를 출력한다.
+- void write(String s, int off, int len) : s의 off위치부터 len만큼 문자열을 출력한다.
+
+<br>
+
 **InputStream클래스의 주요 메서드** <br>
 - int read() : 추상 메서드로 입력스트림에서 한 바이트씩 읽어서 0~255사이의 값 리턴, 끝에 도달하여 읽을 수 없을 때 -1 리턴
 - int read(byte[] b) : b의 크기만큼 읽어와 b에 저장하고, 읽어 온 바이트 개수를 리턴한다. 끝에 도달하면 -1 리턴
@@ -230,4 +243,48 @@ I/O(Input/Output), 자바에서는 java.io패키지로 다양한 입출력 기�
 - int write(byte[] b, int off, int len) : b의 off위치부터 len만큼 바이트를 출력한다.
 - int flush() : 버퍼에 남은 바이트를 출력한다.
 - void close() : 출력 스트림을 닫아 스트림과 관련된 시스템 자원을 반환한다.
+
+<br>
+
+**파일 관련 클래스** <br>
+- File : 경로 정보를 바탕으로 해당 파일을 사용하는 객체를 생성하고, 파일과 디렉토리 관련 여러 메서드를 제공한다.
+- FileReader : 파일에서 문자 스트림을 기반으로 한 입력을 처리하는 클래스
+- FileWriter : 파일에서 문자 스트림을 기반으로 한 출력을 처리하는 클래스
+- FileInputStream : 파일에서 바이트 스트림을 기반으로 한 입력을 처리하는 클래스이다.
+- FileOutputStream : 파일에서 바이트 스트림을 기반으로 한 출력을 처리하는 클래스이다.
+<br>
+
+```
+Reader fin = new FileReader("C:\\TMP_IO\\test.txt");
+StringBuffer buffer = new StringBuffer();
+int data; (단일 문자 하나를 읽어와 유니코드 값 0~65535를 리턴한다. 2byte이기때문)
+while((data=fin.read())!=-1) { // Reader의 read()함수는 반환타입이 int이다. 읽을 문자열이 없다면 -1을 리턴하므로 반복문이 끝난다.
+   buffer.append((char)data);
+}
+
+Writer fout = new FileWriter("C:\\TMP_IO\\test.txt",true); // 파일이 존재하지 않으면 파일을 생성한다. 기본값은 덮어쓰기고 true항목을 파라미터로 넣어주게되면 추가로 내용을 덧붙일 수 있다.
+fout.write("HELLOWORLD\n");
+fout.flush(); // buffer공간을 초기화
+fout.close();
+
+// -----------------------------------------------------------------------------
+InputStream fin = new FileInputStream("C:\\TMP_IO\\data.xlsx);
+while(true) {
+   int data = fin.read(); // 1byte단위로 읽어오므로 0~255사이의 숫자를 반환한다.
+   if(data==-1)
+      break;
+   System.out.print((char)data);
+}
+
+OutputStream fout = new FileOutputStream("C:\\TMP_IO\\test.txt");
+fout.write('a');
+fout.write('가'.getBytes(StandardCharsets.UTF_8)); // 문자열은 2byte?라 공백처리되므로 처리를 해야한다.
+```
+
+
+
+
+
+
+
 
