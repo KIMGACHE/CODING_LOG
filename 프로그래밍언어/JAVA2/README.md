@@ -532,8 +532,8 @@ List<Person> list4 = list3.stream() // List를 Stream으로 변환한다.
 
 ## 함수형 프로그래밍
 
-
-
+https://www.nextree.co.kr/p6753/
+https://developer.mozilla.org/ko/docs/Glossary/MVC
 
 
 
