@@ -281,6 +281,138 @@ fout.write('a');
 fout.write('가'.getBytes(StandardCharsets.UTF_8)); // 문자열은 2byte?라 공백처리되므로 처리를 해야한다.
 ```
 
+## JDBC 프로그래밍
+JAVA와 DBMS를 연결해주는 여러가지 클래스를 사용하기 위해서는 Driver 클래스가 필요하다. (각 DBMS마다 Driver클래스가 다르다.) <br>
+<br>
+JDBC프로그래밍 단계
+1. JDBC Driver 로드
+2. 데이터베이스 연결
+3. Statement(SQL문) 생성
+4. Statement(SQL문) 전송
+5. 결과 받기
+6. 연결해제
+
+<br>
+
+**기본** <br>
+```
+String id = "root"; // DB이름
+String pw = "1234"; // DB비밀번호
+String url = "jdbc:mysql:/localhost:3306/testdb"; // DB경로
+
+// JDBC 참조변수
+Connection conn = null;
+PreparedStatement pstmt = null;
+ResultSet rs = null;
+
+try {
+   Class.forName("com.mysql.cj.jdbc.Driver");
+   conn = DriverManager.getConnection(url,id,pw); // connection 객체를 만든다.
+} catch(Exception e) {
+   e.printStackTrace();
+} finally {
+   try {
+      conn.close();
+   } catch(SQLException e) {
+      e.printStackTrace();
+   }
+}
+```
+<br>
+
+**INSERT** <br>
+```
+try {
+   Class.forName("com.mysql.cj.jdbc.Driver");
+   conn = DriverManager.getConnection(url,id,pw); // connection 객체를 만든다.
+
+   pstmt = conn.preparStatement("insert into tbl_std values(?,?,?)"); // 미리 Statement를 만들어두고 전송한다. 변수는 ?로 처리한다.
+   pstmt.setString(1,"홍길동"); // 첫번째 파라미터에는 statement에 들어간 ?의 인덱스를 적는다.
+   pstmt.setInt(2, 55); // 두번째 파라미터에는 해당 인덱스에 해당하는 값이 들어간다.
+   pstmt.setString(3,"대구"); // 각 변수의 타입을 확인하여 매서드를 사용해야한다.
+
+   int result = pstmt.executeUpdate();
+   // DML(INSERT,UPDATE,DELETE)문장 실행, 문제가 발생하면 0을 return한다.
+}
+```
+
+<br>
+
+**UPDATE** <br>
+```
+try {
+   Class.forName("com.mysql.cj.jdbc.Driver");
+   conn = DriverManager.getConnection(url,id,pw); // connection 객체를 만든다.
+
+   pstmt = conn.preparStatement("update tbl set age=? where name=?");
+   pstmt.setInt(1,22);
+   pstmt.setString(2,"홍길동");
+
+   int result = pstmt.executeUpdate();
+   // DML(INSERT,UPDATE,DELETE)문장 실행, 문제가 발생하면 0을 return한다.
+}
+```
+
+<br>
+
+**DELETE** <br>
+```
+try {
+   Class.forName("com.mysql.cj.jdbc.Driver");
+   conn = DriverManager.getConnection(url,id,pw); // connection 객체를 만든다.
+
+   pstmt = conn.preparStatement("delete from tbl_std where name=? and age=? and addr=?");
+   pstmt.setString(1, "홍길동");
+   pstmt.setInt(2,22);
+   pstmt.setString(3,"대구");
+
+   int result = pstmt.executeUpdate();
+   // DML(INSERT,UPDATE,DELETE)문장 실행, 문제가 발생하면 0을 return한다.
+}
+```
+
+<br>
+
+**SELECT** <br>
+```
+try {
+   Class.forName("com.mysql.cj.jdbc.Driver");
+   conn = DriverManager.getConnection(url,id,pw); // connection 객체를 만든다.
+
+   pstmt = conn.preparStatement("select * from tbl_std");
+   rs = pstmt.executeQuery(); // resultset에 연결
+
+   if(rs!=null) { // rs.next()는 커서를 다음 row로 이동한다.
+      while(re.next()) { // 테이블의 row를 읽으면서 데이터가 있으면 true를 반환하고 더 이상 읽을게 없으면 false를 반환한다.
+         System.out.print(rs.getString(1)+" ");
+         System.out.print(rs.getString(2)+" ");
+         System.out.print(rs.getString(3)+" ");
+         System.out.println();
+      }
+   }
+
+} catch(Exception e) {
+   e.printStackTrace();
+} finally { // 나중에 만들어진 객체를 먼저 close해야한다.
+   try {
+      rs.close();
+   } catch(SQLException e) {
+      e.printStackTrace();
+   }
+   try {
+      pstmt.close();
+   } catch(SQLException e) {
+      e.printStackTrace();
+   }
+   try {
+      conn.close();
+   } catch(SQLException e) {
+      e.printStackTrace();
+   }
+}
+```
+
+
 
 
 
