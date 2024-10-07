@@ -423,7 +423,84 @@ try {
 6. 옵저버 패턴 : 한 객체의 상태 변화를 관찰하는 다른 객체들에게 자동으로 알림을 전달하는 패턴이다. 주체와 관찰자로 구성되며 상태변화가 발생하면 관찰자들에게 알림이 전달된다.
 7. 전략 패턴 : 실행 중에 알고리즘을 선택할 수 있도록 하는 패턴이다. 알고리즘을 캡슐화하여 각각의 전략을 독립적으로 변경할 수 있으며, 클라이언트는 전략을 선택하여 사용한다.
 
-## LAMDA Stream
+## LAMDA식
+람다식은 **매개변수** + **실행문**으로 구성된다. 메서드 이름과 반환타입이 모두 생략되는 구조이다. <br>
+() -> {}; <br>
+
+**작성법**
+1. 메서드의 이름과 반환타입을 제거하고 '->'를 블록{} 앞에 추가한다.
+   ```
+   // 이전의 코드
+   int max(int a, int b) { return a>b ? a: b; }
+
+   // 람다식
+   (int a, int b) -> { return a>b ? a:b; }
+   ```
+3. 반환값이 있는 경우 식이나 값만 적고 return문을 생략 가능하다. (;을 끝에 붙이지 않는다.)
+   ```
+   (int a, int b) -> a>b ? a:b
+   ```
+5. 매개변수의 타입이 추론 가능하면 생략 가능하다.(대부분의 경우 생략이 가능하다.)
+   ```
+   (a,b) -> a>b ? a:b
+   ```
+
+**주의사항**
+1. 매개변수가 하나인 경우, 타입이 없는 경우에만 ()를 생략할 수 있다.
+   ```
+   a -> a*a
+   ```
+3. 블록 안의 문장이 하나뿐일 때, 괄호 {}를 생략가능 하다. (;을 끝에 붙이지 않는다.)
+   ```
+   (int i) -> System.out.println(i)
+   ```
+5. 단 하나뿐인 문장이 return문이면 괄호{} 생략불가 (return을 생략하면 생략가능하다).
+   ```
+   (int a, int b) -> { return a>b ? a:b; }
+   ```
+
+<br>
+
+**람다식은 함수형 인터페이스의 미완성된 메서드를 완성시켜 사용할 수 있다.** <br>
+```
+// 덧셈, 뺄셈, 곱셈, 나눗셈을 수행하는 함수형 인터페이스 정의
+interface Calculator {
+	int calculator(int num1, int num2);
+	
+}
+
+public class C03LAMDA {
+
+	public static void main(String[] args) {
+		
+		Calculator add = (num1,num2)->{return num1+num2;};
+		Calculator sub = (num1,num2)->num1-num2;
+		Calculator mul = (num1,num2)->{return num1*num2;};
+		Calculator div = (num1,num2)->{return num1/num2;};
+		
+		int a = 10;
+		int b = 2;
+		int sum = add.calculator(a, b);
+		System.out.println(sum);
+
+	}
+
+}
+```
+
+## Stream
+자바 스트림은 Collection을 처리하고 변환하기 위한 강력한 기능을 제공한다. <br>
+스트림을 사용하면 데이터를 효율적으로 처리하고 다양한 연산을 수행할 수 있습니다. <br>
+
+
+
+
+
+
+
+
+
+
 
 
 
