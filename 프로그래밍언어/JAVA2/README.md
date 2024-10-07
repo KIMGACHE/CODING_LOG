@@ -491,8 +491,46 @@ public class C03LAMDA {
 ## Stream
 자바 스트림은 Collection을 처리하고 변환하기 위한 강력한 기능을 제공한다. <br>
 스트림을 사용하면 데이터를 효율적으로 처리하고 다양한 연산을 수행할 수 있습니다. <br>
+<br>
+**중개 연산(Intermediate Operations)**: <br>
+스트림의 요소를 변환하거나 필터링하는 작업을 수행한다. 파이프라인에 의해 여러번 호출 할 수 있다.<br>
+중개 연산만으로는 실제로 데이터가 처리되지 않으며, 최종 연산이 호출될 때까지 연산이 지연된다. <br>
+1. filter: 주어진 조건에 맞는 요소를 선택한다.
+2. map: 요소를 다른 형태로 변환한다.
+3. flatMap: 각 요소를 변환하고 이를 하나의 스트림으로 평면화한다.
+4. distinct : 중복된 요소를 제거한다.
+5. sorted: 요소를 정렬한다.
+6. limit: 주어진 개수만큼 요소를 제한한다.
+7. skip: 처음 몇 개의 요소를 제외하고 반환한다.
+<br>
+**최종 연산(Terminal Operations)**: <br>
+1. forEach: 각 요소를 반복적으로 처리한다.
+2. collect: 요소를 수집하여 새로운 컬렉션을 생성한다.
+3. reduce: 요소를 하나로 줄여서 결과를 반환한다.
+4. min/max: 최소/최대값을 반환한다.
+5. count: 요소의 개수를 반환한다.
+ 
+```
+List<Integer> list = Arrays.asList(1,2,3,4,5);
 
+List<Integer> list2 = list.stream() // List를 Stream으로 변환한다.
+			.filter(n->n%2==1) // 홀수인 요소만을 선택한다.
+			.map(n->n*n) // 요소를 제곱한 값으로 변경한다.
+			.collection(Collectors.toList()); // Stream을 List로 변환한다.
 
+List<Person> list3 = Arrays.asList(
+	new Person("박효신추억은사랑을닮아",40),
+	new Person("김범수끝사랑",45),
+	new Person("자이언티",30)
+	);
+
+List<Person> list4 = list3.stream() // List를 Stream으로 변환한다.
+			.map(Person::getAge) // 요소를 Person클래스의 getAge의 반환값으로 변환한다.
+			.sorted((a,b)->{return b-a;}) // Stream을 내림차순으로 정렬한다.
+			.collect(Collectors.toList()); // Stream을 List로 변환한다.
+```
+
+## 함수형 프로그래밍
 
 
 
