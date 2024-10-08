@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a4a3d2de-0565-4d48-a75e-0e0184a82d9a)## JAVA
+![image](https://github.com/user-attachments/assets/a4de0d99-589b-48e4-9110-f116be8e332b)![image](https://github.com/user-attachments/assets/a4a3d2de-0565-4d48-a75e-0e0184a82d9a)## JAVA
 
 ### 기본 API 클래스
 최상위 클래스 Object <br>
@@ -575,10 +575,10 @@ public static void main(String[] args) {
 ## Class Diagram
 클래스 다이어그램은 클래스 간의 관계를 도식화한 것으로 UML의 한 종류이다. <br>
 ![image](https://github.com/user-attachments/assets/dda76cbc-4a44-481c-9d6c-4d9368bfa370)
-
-
-
-
-
+<br>
+- 일반화, 실체화의 경우 상속관계를 의미하고 추상클래스나 인터페이스일 경우 점선으로 그 이외에는 실선으로 표시한다.
+- 의존의 경우 클래스 내부의 멤버함수가 또 다른 클래스의 객체를 파라미터로 받는 경우에 사용한다.
+- 연관의 경우 클래스 내부의 멤버변수가 다른 클래스 자료형을 가지는 경우에 사용한다.
+- 집합과 합성의 경우 한 클래스 내부에 다른 클래스의 객체를 생성하여 사용하는 경우에 사용하는데 집합의 경우에 해당 객체가 의존적이지 않으나 합성의 경우 의존적이다(?)
 
 
