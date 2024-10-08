@@ -1,4 +1,4 @@
-## JAVA
+![image](https://github.com/user-attachments/assets/a4a3d2de-0565-4d48-a75e-0e0184a82d9a)## JAVA
 
 ### 기본 API 클래스
 최상위 클래스 Object <br>
@@ -531,13 +531,50 @@ List<Person> list4 = list3.stream() // List를 Stream으로 변환한다.
 ```
 
 ## 함수형 프로그래밍
+함수형 인터페이스를 사용할거면 인터페이스에 추상 메서드를 하나만 만든다. <br>
+그리고 @FunctionalInterface를 붙여줌으로써 컴파일러가 해당 interface가 함수형인지 알 수 있다.<br>
 
-https://www.nextree.co.kr/p6753/
-https://developer.mozilla.org/ko/docs/Glossary/MVC
+```
+@FunctionalInterface
+interface Func1 { void say(String message); }
+@FunctionalInterface
+interface Func2 { int sum(Integer ...args); }
+@FunctionalInterface
+interface Func3 { List<Integer> createListDesc(int ...args); }
 
+public static void main(String[] args) {
+   Func1 func1 = (message) -> {System.out.println(message);}; // 추상 메서드를 변수 선언과 동시에 완성시킨다.
+   func1.say("HelloWorld");
 
+   Func2 func2 = (arg) -> {
+      int sum = 0;
+      for(int el:arg) {
+         sum+el;
+      }
+      return sum;
+   }
+   System.out.println(func2.sum(1,2,3,4,5,6,7,8,11,22,66));
+   Func3 func3 = (arg)->{
+      return Arrays.stream(arg)
+			.boxed()	// sorted가 원시타입 int를 지원하지않아 Integer로 매핑
+			.sorted((a,b)->{return b-a;})
+			.collect(Collectors.toList());
+   };
+   List<Integer> li = func3.createListDesc(6,55,4,22,88,999,1,23,333,3125);
+   System.out.println(li);
+}
+```
+**제공되는 함수형 인터페이스** <br>
+1. Function<T, R> : apply 메서드를 가지고 있어서 하나의 인자(T)를 받아 결과(R)을 반환하는 함수형 인터페이스이다.
+2. Supplier<T> : get 메서드를 가지고 있어서 어떠한 인자도 받지 않고 결과만을 제공하는 함수형 인터페이스이다.
+3. Consumenr<T> : accept 메서드를 가지고 있어서 어떠한 인자를 받아서 결과를 반환하지 않는 함수형 인터페이스이다.
+4. Predicate<T> : test 메서드를 가지고 있어서 어떠한 인자를 받아서 Boolean타입의 결과를 반환하는 함수형 인터페이스이다.
+5. UnaryOperator<T> : apply 메서드를 가지고 있어서 하나의 인자를 받아서 동일한 타입의 결과를 반환하는 함수형 인터페이스이다.
+6. BinaryOperator<T> : apply 메서드를 가지고 있어서 두 개의 인자를 받아 동일한 타입의 결과를 반환하는 함수형 인터페이스이다.
 
-
+## Class Diagram
+클래스 다이어그램은 클래스 간의 관계를 도식화한 것으로 UML의 한 종류이다. <br>
+![image](https://github.com/user-attachments/assets/dda76cbc-4a44-481c-9d6c-4d9368bfa370)
 
 
 
