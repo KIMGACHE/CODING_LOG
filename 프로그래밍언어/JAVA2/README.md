@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a4de0d99-589b-48e4-9110-f116be8e332b)![image](https://github.com/user-attachments/assets/a4a3d2de-0565-4d48-a75e-0e0184a82d9a)## JAVA
+## JAVA
 
 ### 기본 API 클래스
 최상위 클래스 Object <br>
