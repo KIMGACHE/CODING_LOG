@@ -34,9 +34,22 @@ Properties : 전역 설정 파일(application.properties) <br>
    -UserController
      - execute() : 파라미터 받기, 유효성 체크, 서비스 실행, 뷰로 이동/내용 전달
 3. Persistence Layer
-4. Business Layer
+   - BookDaoImpl
+     - Singleton Pattern(단일객체)
+     - DB연결을 위한 기본속성
+     - CRUD함수 작성
+  - BookDaoTests
+     - CRUD Test
+5. Business Layer
+  - BookServiceImpl
+     - Singleton Pattern(단일 객체)
+     - BookDaoImpl을 연결
+     - Service함수 작업
 
+<br>
 
+요청 : View -> FC -> SC -> Service -> Dao -> Table
+데이터 : View <- FC <- SC <- Service <- Dao <- Table
 
 
 
