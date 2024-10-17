@@ -6,8 +6,8 @@
 |개발자 환경구축|[운영체제 기초](./개발자_환경구축/리눅스)|[GIT](./개발자_환경구축/GIT)||
 |화면기획|[요구사항분석](./화면기획/요구사항분석)|[유스케이스](./화면기획/유스케이스)|[유스케이스명세서](./화면기획/유스케이스명세서)|
 |화면구현|[HTML](./화면구현/HTML)|[CSS](./화면구현/CSS)|[JAVASCRIPT](./화면구현/JS)|
-|프로그래밍언어|[JAVA](./프로그래밍언어/JAVA)|[JAVA2](./프로그래밍언어/JAVA2)|[JAVA3](./프로그래밍언어/JAVA3)|
-|데이터베이스|[Oracle]|||
+|응용SW엔지니어링|[JAVA](./프로그래밍언어/JAVA)|[JAVA2](./프로그래밍언어/JAVA2)|[JAVA3](./프로그래밍언어/JAVA3)|
+|DB엔지니어링|[Oracle](./DB엔지니어링/ORACLE)|||
 
 오라클 DB접속방법
 cmd - sqlplus를 입력하면 - 계정과 비밀번호를 입력하면된다(system/1234)
@@ -39,6 +39,131 @@ select rownum as RN, usertbl.* from usertbl; -> as는 별칭 지정 / rownum을 
 select * from
 (select rownum as RN, usertbl.* from usertbl)
 where RN >= 3;
+
+-- userId별 구매 총량을 출력
+select userid,sum(amount) from buytbl group by userid / 기본키는 들어가지않는게 좋다
+
+select count(*) from buytbl; // count(*)는 null을 포함하지않는다 or count자체가 null을 포함하지않는다
+
+select trunc(avg(amount),5) from buytbl -> 소숫점 5번째자리까지 출력
+
+group by로 묶여지는 컬럼에대한 연산은 having을 사용해야만한다.
+
+create sequence tmp_seq start with 1 increment by 1 maxvalue 100 cycle nocache; -> 1부터 시작해서 100까지 1씩 증가하는 tmp_seq작성
+
+insert into tmp values(tmp_seq.nextval,'a1');          // seqeunce를 사용하여 auto increment를 대체
+
+create table TEST_01 (
+    userid char(10) primary key,
+    name char(10) not null
+);
+desc TEST_01;
+select * from all_constraints where TABLE_NAME = 'TEST_01' and CONSTRAINT_TYPE='P';
+select * from ALL_CONS_COLUMNS where TABLE_NAME='TEST_01';
+
+create table TEST_02 (
+    userid char(10),
+    name char(10) not null,
+    primary key(userid)
+); 
+select * from all_constraints where TABLE_NAME = 'TEST_02' and CONSTRAINT_TYPE='P';
+select * from ALL_CONS_COLUMNS where TABLE_NAME='TEST_02';
+
+alter table TEST_01 drop primary key; -> 기본키 삭제하기
+select * from all_constraints where TABLE_NAME = 'TEST_01' and CONSTRAINT_TYPE='P';
+select * from ALL_CONS_COLUMNS where TABLE_NAME='TEST_01';
+
+alter table TEST_01 add constraint PK_USERID primary key(userid); -> 기본키 추가하기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
