@@ -71,7 +71,74 @@ grant connect, dba to '계정이름'; <br>
     ALTER TABLE TEST_09 MODIFY (mobile1 DEFAULT '010');
     -- Default : 제약조건은 아니고, 값을 넣지않았을 때 기본값을 지정해줄 수 있다.
     ```
-17. 
+17. Index
+    - Index는 데이터의 주소를 가지고 있다. 빠르게 데이터 작업을 하기위한 하나의 방법으로 사용된다
+    - Primary Key, Unique설정시에 자동으로 index가 생성되지만, Foreign Key로 설정시에는 자동으로 index가 생성되지 않는다.
+      ```
+      -- index 직접 설정
+      create index ex_index01 on userTbl(userId);
+      -- index 삭제
+      drop index ex_index01;
+      ```
+19. 트랜잭션
+    ```
+    CREATE TABLE TEST(NO NUMBER(3),NAME VARCHAR2(10),AGE NUMBER(3),GENDER VARCHAR2(6));
+
+    INSERT INTO TEST VALUES(1, 'JOKER', '28', 'M');
+    INSERT INTO TEST VALUES(2, 'ADAMS', '33', 'M');
+    savepoint s1;
+    INSERT INTO TEST VALUES(3, 'SMITH', '35', 'M');
+    rollback to s1; -- 3번이 입력되기 전으로 rollback된다.
+    rollback; -- 가장 최근 commit한 시점으로 rollback한다. 모든 입력을 넣기 전으로 돌아간다.
+    INSERT INTO TEST VALUES(1, 'JOKER', '28', 'M');
+    INSERT INTO TEST VALUES(2, 'ADAMS', '33', 'M');
+    commit; -- 데이터베이스에 저장
+    INSERT INTO TEST VALUES(3, 'SMITH', '35', 'M');
+    rollback; -- 1,2번을 저장한 시점으로 롤백된다.
+    drop table TEST PURGE; -- 테이블자체를 drop을 통해 삭제시킨 경우 롤백이 불가능하다.
+    ```
+21. 조인
+    - inner join
+    ```
+    select * from usertbl inner join buytbl on usertbl.userid = buytbl.userid;
+    -- on을 통해 join의 기준을 설정
+    select userId,name,prodname,groupname from usertbl inner join buytbl on usertbl.userid = buytbl.userid;
+    -- userId를 join하는 테이블이 모두 가지고 있으므로 에러가 발생한다.
+    select usertbl.userId,name,prodname,groupname from usertbl inner join buytbl on usertbl.userid = buytbl.userid;
+    -- 따라서 어느 테이블의 userId인지 명시해야한다.
+    select U.userId,name,prodname,groupname from usertbl U inner join buytbl B on U.userid = B.userid;
+    -- from절에서 테이블의 별칭을 지정하고 select,on에 이를 적용할 수 있다.
+    select U.userId,price,amount from usertbl U inner join buytbl B
+    on U.userid = B.userid where amount >= 5 order by amount desc;
+    ```
+    - outer join
+    ```
+    -- left OuterJoin
+    -- userTbl을 기준으로 userTbl에 존재하는 userId와 같은 buyTbl의 행이 join된다.
+    select * from userTbl U left outer join buyTbl B on U.userId = B.userID;
+    
+    -- right OuterJoin
+    -- buyTbl을 기준으로 buyTbl에 존재하는 userId와 같은 userTbl의 행이 join된다.
+    select * from userTbl U right outer join buyTbl B on U.userId = B.userID;
+    ```
+23. View
+    - 자주 사용할 것 같은 테이블의 일부를 view라는 가상 테이블로 만들어 필요한 부분만을 사용하는 방식.
+    ```
+    create or replace view view_01 as select userId, name, concat(mobile1,mobile2) as phone from userTbl;
+    -- view_01이라는 이름의 view가 없으면 생성하고 있다면 해당 내용으로 변경한다.
+
+    create or replace view view_02 as select U.userId, U.name, B.prodname, B.amount as phone
+    from userTbl U inner join buyTbl B on U.userId = B.userId;
+    -- view와 join을 함께 사용
+
+    -- table이 변경되면 view도 영향을 받는다.
+    drop table buyTbl;
+    select * from view_02; -- error!
+    drop view view_01; -- view 삭제
+    ```
+25. PL&SQL
+26. 프로시저
+27. 트리거
 
 
 
