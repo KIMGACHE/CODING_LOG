@@ -44,8 +44,34 @@ grant connect, dba to '계정이름'; <br>
     -- 상품명과 해당 상품의 가격*구매수를 곱한 값을 출력한다. 이때 상품명으로 묶어 출력한다.
     ```
 12. having
-13. rollup
-14. 제약조건 설정하기
+    ```
+    select prodname, sum(price*amount) from buyTbl group by prodname having sum(price*amount) >=200;
+    ```
+14. rollup
+15. 제약조건 설정하기
+    ```
+    alter table TEST_01 add constraint PK_USERID primary key(userid);
+    -- TEST_01테이블에 PK_USERID라는 이름의 기본키를 userid라는 컬럼에 추가하겠다.
+
+    alter table TEST_01 add constraint FK_01 foreign key(prod_id) references Prod_tbl(prod_id);
+    -- TEST_01테이블에 FK_01이라는 이름의 외래키를 만든다. 이때 TEST_01의 prod_id가 Prod_tbl테이블의 prod_id를 참조한다.
+
+    -- UNIQUE 제약조건 : 중복은 허용하지않으나 null은 허용한다.
+
+    create table TEST_09
+      (
+	   userid char(8) primary key,
+	   name varchar(10),
+       birthyear int check (birthYear >= 1900 and birthYear <=2023),
+       mobile1 char(3) null,
+       constraint CK_name CHECK (name is NOT NULL)
+      );
+    -- check 제약조건 : 테이블에 값을 넣을 때 해당 조건을 만족해야 값을 삽입할 수 있다.
+    
+    ALTER TABLE TEST_09 MODIFY (mobile1 DEFAULT '010');
+    -- Default : 제약조건은 아니고, 값을 넣지않았을 때 기본값을 지정해줄 수 있다.
+    ```
+17. 
 
 
 
