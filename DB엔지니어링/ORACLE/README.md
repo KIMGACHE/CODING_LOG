@@ -131,7 +131,11 @@ grant connect, dba to '계정이름'; <br>
     from userTbl U inner join buyTbl B on U.userId = B.userId;
     -- view와 join을 함께 사용
 
-    -- table이 변경되면 view도 영향을 받는다.
+    select amount from view_02 where amount >=10;
+    -- view_02의 쿼리가 서브쿼리의 형태로 주어진다.
+    select amount from (select U.userId, U.name, B.prodname, B.amount as phone from userTbl U inner join buyTbl B on U.userId = B.userId);
+    
+    -- 따라서 table이 변경되면 view도 영향을 받는다.
     drop table buyTbl;
     select * from view_02; -- error!
     drop view view_01; -- view 삭제
