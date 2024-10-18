@@ -11,22 +11,41 @@ grant connect, dba to '계정이름'; <br>
    - %: 문자수 제한 없이 모든 문자
    - _: 문자수 제한이 있는 모든 문자
    ```
-   
+   select * from userTbl where userId like '김%'; -- userId가 김으로 시작하고 뒤에 무슨 문자가 몇개가 오던 상관없다.
+   select * from userTbl where userId like '_병_';
+   -- userId가 '병' 앞에 어떤 문자던 한 문자, 뒤에 어떤 문자던 한 문자가 오는 것을 조회한다. 
    ```
 3. 여러개의 값들 중 하나를 선택해야 할 때
-   - any :
-   - all :
+   - any : 여러개의 값들 중 모든 것을 포함하는 경우, or연산과 비슷하다.
+   - all : 여러개의 값들 중 모든 것에 충족되는 경우, and연산과 비슷하다.
+   ```
+   select * from userTbl where height > any (select * from userTbl where age =25);
+   -- 이때 나이가 25인 사람의 키가 [177,158,172]라면 세가지 키를 모두 포함할 수 있는 height > 158이 where절이 된다.
+   select * from userTbl where height > all (select * from userTbl where age =25);
+   -- 이때 나이가 25인 사람의 키가 [177,158,172]라면 세가지 키가 모두 충족되는 height > 177이 where절이 된다.
+   ```
 5. 정렬 order by
    ```
-   
+   select name , mDate from usertbl order by mDate;
+   -- order by 기준으로 정렬한다. 기본값은 오름차순이고 desc를 뒤에 붙여 내림차순으로 정렬도 가능하다.(사전편찬순)
    ```
-7. group by
+7. distinct
+   - select에 조회될 항목을 넣기전에 distinct를 넣으면 조회되는 항목들 중 중복된 항목은 포함하지 않는다.
+9. group by
    ```
+   select addr from userTbl group by addr; -- addr을 기준으로 묶어서 조회할 수 있다.
+   select height from userTbl group by height having height >= 170;
+   -- group by를 사용한 쿼리에는 where문을 사용할 수 없어 having문을 통해 조건을 걸어줄 수 있다.
    ```
-9. 집계함수
-10. having
-11. rollup
-12. 제약조건 설정하기
+10. 집계함수
+    - sum,avg,min,max,count등등 여러 집계 함수가 있다.
+    ```
+    select prodname, sum(price*amount) from buyTbl group by prodname;
+    -- 상품명과 해당 상품의 가격*구매수를 곱한 값을 출력한다. 이때 상품명으로 묶어 출력한다.
+    ```
+12. having
+13. rollup
+14. 제약조건 설정하기
 
 
 
