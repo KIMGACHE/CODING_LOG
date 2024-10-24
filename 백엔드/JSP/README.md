@@ -6,6 +6,15 @@ session.setAttribute("username", "KIMGACHE"); // 키-밸류의 쌍으로 세션�
 session.setMaxInactiveInterval(60); // 세션유지 기간을 설정할 수 있다. 초단위로 입력하고 기본값은 1800초이다.
 session.getAttribute("username); // 키값을 통해 밸류값을 가져올 수 있다.
 session.getMaxInactiveInterval(); // 세션유지 기간을 가져올 수 있다.
+session.invalidate(); // 세션의 값을 제거하고 삭제한다.
 ```
 **쿠키Cookie** : 세션의 정보들 중 덜 중요한 정보를 클라이언트의 브라우저에 저장한다.
+문자열 데이터만 저장가능, 4Kbyte이하의 공간을 차지, 여러개의 쿠키를 설정가능하다(최대 300개), 도메인당 20개까지 저장가능,
+저장한도를 초과하면 최근에 사용되지 않는 쿠키부터 자동으로 삭제된다.
+```
+Cookie cookie1 = new Cookie("myCookie1","myCookie1Value");
+```
+
 **토큰Token** : 쿠키는 브라우저에 저장되므로 보안이 취약하여 쿠키를 암호화한 것이 토큰이다.
+
+
