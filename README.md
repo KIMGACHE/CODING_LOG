@@ -8,4 +8,4 @@
 |화면구현|[HTML](./화면구현/HTML)|[CSS](./화면구현/CSS)|[JAVASCRIPT](./화면구현/JS)|
 |응용SW엔지니어링|[JAVA](./프로그래밍언어/JAVA)|[JAVA2](./프로그래밍언어/JAVA2)|[JAVA3](./프로그래밍언어/JAVA3)|
 |DB엔지니어링|[Oracle](./DB엔지니어링/ORACLE)|||
-|백엔드|[JSP](./백엔드/JSP)|||
+|백엔드|[JSP](./백엔드/JSP)|[Servlet](./백엔드/Servlet)||
