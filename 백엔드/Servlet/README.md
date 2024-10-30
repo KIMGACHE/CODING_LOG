@@ -35,6 +35,17 @@ doPost(HttpServletRequest req, HttpServletResponse resp) : 매핑된 경로로 �
 
 ### Filter & 인터셉터
 필터와 인터셉터는 웹과 관련된 공통 관심사(로그인, 사용자 권한)를 처리할 때 주로 사용된다. <br>
-기본적으로 필터는 dispatcherServlet이전에 호출되고, 필터는 체인으로 구성되어 여러 개의 필터를 자유롭게 추가할 수 있다.
+기본적으로 필터는 dispatcherServlet이전에 호출되고, 필터는 체인으로 구성되어 여러 개의 필터를 자유롭게 추가할 수 있다.<br>
 이때, 필터에서 적절하지 않은 요청이라고 판단하면 dispatcherServlet을 호출하지 않고 요청을 끝낼 수도 있다. <br>
-(HTTP요청 -> WAS -> Filter1 -> Filter2 -> Filter3 -> Dispatcher Servlet -> Controller)
+(HTTP요청 -> WAS -> Filter1 -> Filter2 -> Filter3 -> Dispatcher Servlet -> Controller)<br>
+<br>
+필터는 3가지 메서드로 구성된다.
+1. init()
+2. doFilter()
+3. destroy()
+
+```
+@Override
+public void doFilter(ServletRequest servletRequest, ServletResponse servletReponse, FilterChain filterChain) throw Exception {}
+```
+매개변수로 ServletRequest와 ServletResponse를 받으며 이를 각각 HttpServletRequest, HttpServletResponse로 다운캐스팅하여 사용할 수 있다.
