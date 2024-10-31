@@ -4,6 +4,7 @@
 ### Servlet Mapping
 1. web.xml에 등록하는 방법
 이클립스 프로젝트를 우클릭하여 Java EE Tools-Generate Deployment Descriptor Stub클릭하면 WEB-INF폴더안에 web.xml파일이 생성된다.<br>
+**web.xml파일은 Java 웹 어플리케이션의 설정파일로, 주로 서블릿 컨테이너에서 웹 어플리케이션이 어떻게 동작할지를 정의하는 역할을 한다.**<br>
 해당 파일에서 <servlet>,<servlet-mapping>태그를 사용하여 설정할 수 있다. <br>
 ```
 <servlet>
@@ -87,4 +88,7 @@ Filter또한 Mapping이 가능하며 Servlet과 완전히 동일한 방식을 �
    - ServletRequestListener : 클라이언트로부터의 요청으로 인한 ServletRequest생성과 응답 이후 ServletRequest제거시에 대한 이벤트 리스너
    - ServletRequestAttributeListener : ServletRequest에 attribute를 추가하거나 제거, 수정됐을 때에 대한 이벤트 리스너.
 
+해당 리스너를 implements하고 메서드를 재정의하여 사용할 수 있다.
+
+### Resource
 
