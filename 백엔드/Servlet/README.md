@@ -75,6 +75,16 @@ Filter또한 Mapping이 가능하며 Servlet과 완전히 동일한 방식을 �
 ```
 
 ### Listener
-
+특정 이벤트가 발생하기를 기다리다가 실행되는 컴포넌트(메서드나 함수)를 말한다. <br>
+**Servlet/JSP 리스너 종류** <br>
+1. ServletContext
+   - ServletContextListener : 웹 어플리케이션의 시작, 종료이벤트에 대한 이벤트 리스너.
+   - ServletContextAtrributeListener : ServletContext에 attribute를 추가하거나 제거, 수정됐을 때에 대한 이벤트 리스너.
+3. HttpSession
+   - HttpSessionListener : Http세션의 시작, 종료 이벤트에 대한 이벤트 리스터.
+   - HttpSessionAttributeListener : HttpSession에 attribute를 추가하거나 제거, 수정됐을 때에 대한 이벤트 리스너.
+5. ServletRequest
+   - ServletRequestListener : 클라이언트로부터의 요청으로 인한 ServletRequest생성과 응답 이후 ServletRequest제거시에 대한 이벤트 리스너
+   - ServletRequestAttributeListener : ServletRequest에 attribute를 추가하거나 제거, 수정됐을 때에 대한 이벤트 리스너.
 
 
