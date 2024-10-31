@@ -5,7 +5,6 @@
 1. web.xml에 등록하는 방법
 이클립스 프로젝트를 우클릭하여 Java EE Tools-Generate Deployment Descriptor Stub클릭하면 WEB-INF폴더안에 web.xml파일이 생성된다.<br>
 **web.xml파일은 Java 웹 어플리케이션의 설정파일로, 서블릿 컨테이너에서 웹 어플리케이션이 어떻게 동작할지를 정의하는 역할을 한다.**<br>
-해당 파일에서 <servlet>,<servlet-mapping>태그를 사용하여 설정할 수 있다. <br>
 ```
 <servlet>
   	<servlet-name>C02Servlet</servlet-name>
