@@ -33,19 +33,48 @@ Servlet을 구현하기 위한 핵심 API로 일반 클래스가 아니라 추�
 doGet(HttpServletRequest req, HttpServletResponse resp) : 매핑된 경로로 들어온 GET요청을 처리하는 메서드< br>
 doPost(HttpServletRequest req, HttpServletResponse resp) : 매핑된 경로로 들어온 POST요청을 처리하는 메서드 <br>
 
-### Filter & 인터셉터
-필터와 인터셉터는 웹과 관련된 공통 관심사(로그인, 사용자 권한)를 처리할 때 주로 사용된다. <br>
-기본적으로 필터는 dispatcherServlet이전에 호출되고, 필터는 체인으로 구성되어 여러 개의 필터를 자유롭게 추가할 수 있다.<br>
+### Filter
+필터는 웹과 관련된 공통 관심사(로그인, 사용자 권한)를 처리할 때 주로 사용된다. <br>
+기본적으로 필터는 dispatcherServlet이전에 호출되고, 체인으로 구성되어 여러 개의 필터를 자유롭게 추가할 수 있다.<br>
 이때, 필터에서 적절하지 않은 요청이라고 판단하면 dispatcherServlet을 호출하지 않고 요청을 끝낼 수도 있다. <br>
 (HTTP요청 -> WAS -> Filter1 -> Filter2 -> Filter3 -> Dispatcher Servlet -> Controller)<br>
 <br>
 필터는 3가지 메서드로 구성된다.
-1. init()
-2. doFilter()
-3. destroy()
+1. init() : 필터 초기화 메서드, Servlet 컨테이너가 생성될 때 호출된다.
+2. doFilter() : 고객의 요청이 올 때마다 메서드가 호출된다. 필터의 로직을 구현하는 메서드이다.
+   - doFilter()메서드는 파라미터에 FilterChain을 가지는데 filterchain.doFilter(request,response)메서드를 호출할 수 있다.
+   - 다음 필터가 있으면 필터를 호출하고 필터가 없으면 dispatcherServlet을 호출한다.
+   - 이 로직을 호출하지 않으면 다음 단계로 진행되지 않기때문에 특별한 경우를 제외하고 반드시 호출해야 한다.
+4. destroy() : 필터 종료 메서드, Servlet 컨테이너가 종료될 때 호출된다.
 
 ```
+@WebFilter("/*")
+public class UTF8_EncodingFilter implements Filter {
 @Override
-public void doFilter(ServletRequest servletRequest, ServletResponse servletReponse, FilterChain filterChain) throw Exception {}
+public void doFilter(ServletRequest servletRequest, ServletResponse servletReponse, FilterChain filterChain) throw Exception {
+	doChain(servletRequest, servletResponse);
+}
+}
 ```
-매개변수로 ServletRequest와 ServletResponse를 받으며 이를 각각 HttpServletRequest, HttpServletResponse로 다운캐스팅하여 사용할 수 있다.
+매개변수로 ServletRequest와 ServletResponse를 받으며 이를 각각 HttpServletRequest, HttpServletResponse로 다운캐스팅하여 사용할 수 있다. <br>
+**@WebFilter** <br>
+1. /* : 모든 url의 요청에 대해 처리한다.
+2. *do : 확장자가 do인 모든 요청에 대해 처리한다.(do는 임의로 지정한 확장자, 무엇이 들어가든 상관없다)
+3. * : 단독으로 사용 불가, 보통 확장자 매핑과 함께 사용
+<br>
+Filter또한 Mapping이 가능하며 Servlet과 완전히 동일한 방식을 사용한다.
+```
+<filter>
+  	<filter-name>UTF_8_Filter</filter-name>
+  	<filter-class>Filter.UTF8_EncodingFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>UTF_8_Filter</filter-name>
+	<url-pattern>/*</url-pattern>  
+</filter-mapping>
+```
+
+### Listener
+
+
+
