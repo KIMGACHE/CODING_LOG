@@ -188,3 +188,32 @@ BindingResult에 바인딩,유효성검사의 결과를 저장한다.
    - @AssertFalse : Boolean타입의 값이 false인지 확인한다.
    - @CreditCardNuber : 신용카드 번호의 유효성을 검증한다.
 
+## Exception
+@ExceptionHandler : 특정 컨트롤러 내에서 예외 처리를 담당한다. 예외가 발생했을 때 특정한 메서드가 호출되어 예외를 처리하고 적절한 응답을 한다.
+```
+@ExceptionHandler(FileNotFoundException.class)
+public String fileNotFoundExceptionHandler(Exception e, Model model) {
+	log.error("error : " + e);
+	model.addAttribute("ex",e);
+	return "exTest/error";
+}
+
+@ExceptionHandler(ArithmeticException.class)
+public String arithmeticException(Exception e, Model model) {
+	log.error("error : " + e);
+	model.addAttribute("ex",e);
+	return "exTest/error";
+}
+	
+@ExceptionHandler(Exception.class)
+public String AllExceptionHandler(Exception e, Model model) {
+	log.error("error : " + e);
+	model.addAttribute("ex",e);
+	return "exTest/error";
+}
+각 Error 클래스에 따라 어떻게 처리할 것인지를 메서드로 정의해두었다.
+```
+
+<br>
+
+@ControllerAdvice
