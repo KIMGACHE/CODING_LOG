@@ -1,4 +1,4 @@
-## Spring
+# Spring
 
 Library
 ```
@@ -26,7 +26,7 @@ Interface : 접점, 경계면
 ```
 <br>
 
-### Spring FrameWork
+## Spring FrameWork
 1. 의존성 주입(Dependency Injection)
    - Spring은 객체 간의 의존성을 주입하는 기능을 제공한다. 객체 간의 결합도를 낮추고 코드의 유연성을 향상시킨다.
 3. 제어의 역전(Inversion of Control)
@@ -38,7 +38,7 @@ Interface : 접점, 경계면
 9. Spring Security
     - 보안을 위한 Spring Security Framework를 제공한다. 인증,권한 부여, 보안 설정등을 쉽게 구현할 수 있다.
 
-### Parameter
+## Parameter
 **요청 URI Mapping Annotation**
 1. RequestMapping : Spring MVC에서 가장 기본적으로 사용되는 Annotation으로 Http요청과 메서드를 매핑한다.
    - value 또는 path : 매핑할 URI패턴을 지정한다
@@ -119,7 +119,7 @@ URI의 일부에 파라미터 name을 지정하고 @PathVariable로 파라미터
 2. ModelAndView : Model과 View를 모두 포함하는 클래스로 ViewResolver가 지정한 View가 아닌 원하는 특정 View를 선택할 수 있다.
 3. Map : Model과 유사한 역할을 하는 인터페이스로 컨트롤러 메서드에서 데이터를 View로 전달하는데 사용한다.
 
-### Validation
+## Validation
 **WebDataBinder** : 스프링 MVC에서 사용되는 데이터 바인딩과 유효성 검사를 수행하는 클래스이다. <br>
 이 클래스는 컨트롤러 메서드의 파라미터를 바인딩하고 유효성을 검사하는 역할을 한다. 주로 폼 데이터를 처리하고 모델 객체에 바인딩하는데 사용된다.
 1. @InitBinder : 컨트롤러 클래스 내부에 선언하여, 특정 컨트롤러에 대한 WebDataBinder 초기화한다.
