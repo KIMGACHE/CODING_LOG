@@ -217,3 +217,56 @@ public String AllExceptionHandler(Exception e, Model model) {
 <br>
 
 @ControllerAdvice
+여러 컨트롤러 클래스에서 발생하는 예외를 한 곳에서 처리할 수 있도록 도와주는 스프링 프레임워크의 기능이다.<br>
+@ExceptionHandler(받아낼 예외의 종류) : 해당 annotation으로 발생하는 예외의 종류에 따라 원하는 방식으로 처리가 가능하다.
+```
+@ControllerAdvice
+@Slf4j
+public class GlobalExceptionHandler {
+	
+	@ExceptionHandler(NoHandlerFoundException.class)
+	public String NoHandlerFoundExceptionHandler(Exception e, Model model) {
+		log.error("NoHandlerFoundExceptionHandler : " + e);
+		model.addAttribute("ex",e);
+		return "globalError";
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public String AllExceptionHandler(Exception e, Model model) {
+		log.error("error : " + e);
+		model.addAttribute("ex",e);
+		return "globalError";
+	}
+}
+```
+
+<br>
+
+## DataSource
+```
+@Configuration
+public class DataSourceConfig {	
+
+	@Bean
+	public HikariDataSource dataSource3()
+	{
+		HikariDataSource dataSource = new HikariDataSource();
+		// 이 객체는 DB와의 연결을 관리하는 Connection Pool역할을 한다.
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		// MySQL DB에 연결하기 위한 JDBC 드라이버 클래스명을 설정한다.
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/bookdb");
+		// DB에 연결하기 위한 JDBC URL을 설정한다. bookdb라는 이름의 DB를 사용하였다.
+		dataSource.setUsername("root");
+		// DB에 연결할 때 사용한 사용자명
+		dataSource.setPassword("1234");
+		// DB에 연결할 때 사용한 비밀번호
+		return dataSource;
+	}	
+}
+```
+@Configuration : 해당 클래스가 Spring 설정 클래스임을 나타낸다. Spring 설정 클래스에서는 Bean 설정을 정의할 수 있다. <br>
+@Bean : @Configuration클래스 내에서 사용되며 Spring Container에 객체를 등록하고 그 객체를 Spring의 다른 컴포넌트에서 사용할 수 있도록 한다. 해당 Annotation이 붙은 메서드의 반환타입이 Bean의 타입이 된다. <br>
+
+<br>
+
+## SQLMAPPER(MyBatis)
