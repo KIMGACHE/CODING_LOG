@@ -270,3 +270,45 @@ public class DataSourceConfig {
 <br>
 
 ## SQLMAPPER(MyBatis)
+SQLMapper : 개발자가 작성한 SQL 실행결과를 객체에 매핑한다. 객체와 테이블간의 관계를 매핑하는 것이 아니라, SQL문을 직접 작성하고 쿼리의 수행결과를 객체에 매핑하는 방식이다.<br>
+
+```
+// 설정파일
+@Configuration
+public class MybatisConfig {
+	@Autowired
+	private DataSource dataSource;
+
+	@Bean 
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		// SqlSessionFactoryBean 객체 생성
+		sessionFactory.setDataSource(dataSource);
+		// SqlSessionFactoryBean의 Datasource를 이전의 HikariDatasource로 설정한다.
+		return sessionFactory.getObject();
+		// SqlSessionFactory객체를 생성하고 반환한다.
+	}
+}
+// 매핑파일
+@Mapper
+public interface MemoMapper {
+	@SelectKey(statement="select max(id)+1 from tbl_memo",keyProperty = "id",before = false, resultType = int.class)
+	// @SelectKey : 자동으로 키 값을 생성할 때 사용한다. statement는 키를 생성하기 위한 SQL쿼리를 지정한다.
+	// keyProperty는 쿼리 결과를 id라는 속성에 설정하겠다는 의미. before은 @SelectKey가 실행되는 시점을 Insert실행전(true),실행후(false)로 지정한다.
+	// 쿼리 결과가 반환할 데이터 타입을 지정한다.
+
+	@Insert("insert into tbl_memo values(#{id},#{text})")
+	public int insert(MemoDto dto);
+	
+	
+	@Update("update tbl_memo set text=#{text} where id=#{id}")
+	public int update(MemoDto dto);
+	
+	@Delete("delete from tbl_memo where id=#{id}")
+	public int delete(int id);
+	
+	@Select("select * from tbl_memo where id=#{id}")
+	public MemoDto selectAt(int id);
+}
+```
+
