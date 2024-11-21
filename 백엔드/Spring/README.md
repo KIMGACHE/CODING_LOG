@@ -323,6 +323,64 @@ Durability(지속성) : 트랜잭션이 성공적으로 완료되었으면, 결�
 
 <br>
 
-Transaction 연산 <br>
+**Transaction 연산** <br>
 1. Commit : 트랜잭션이 성공적으로 수행되었음을 선언하는 연산, 결과를 최종 DB에 반영한다.
 2. Rollback : 트랜잭션 수행이 실패했음을 선언하고 작업을 취소하는 연산으로, 트랜잭션이 수행되는 도중 일부 연산이 처리되지 못한 상황에 사용한다. DB를 트랜잭션 수행전과 동일한 상태로 되돌려야 한다.
+
+<br>
+
+**Transaction Option** <br>
+1. propagation
+2. isolation
+3. timeout
+4. readOnly
+5. rollbackFor / noRollbackFor : 롤백을 수행할 예외 클래스를 지정한다. / 롤백을 수행하지 않을 예외 클래스를 지정한다.
+
+```
+@Transactional(rollbackFor = SQLException.class)
+public boolean memoAddTx(MemoDto memoDto) throws SQLException {
+	log.info("memoDto insert 전 " + memoDto);
+	int result = memoDaoImpl.insertTx(memoDto);
+	log.info("memoDto insert 후 " + memoDto);
+	result = memoDaoImpl.insertTx(memoDto);
+		
+	return result>0;
+}
+// Transactional annotation에 rollbackFor옵션을 사용하여 해당 메서드에서 SQLException가 발생할 시 롤백을 수행하도록 설정하였다.
+```
+
+<br>
+
+## RESTController
+REST : REpresentative State Transfer의 약자로 분산 시스템을 위한 아키텍쳐 <br>
+네트워크를 경유해서 외부 서버에 접속하거나 필요한 정보를 불러오기 위한 구조. 해당 개념을 바탕으로 설계된 시스템을 RESTFul이라고 표현한다. <br>
+웹에서 화면 전환없이 이루어지는 동작은 대부분 비동기 통신을 통해 이루어지고 비동기 통신을 하기 위해서는 클라이언트가 서버로 요청메시지의 본문(body)에 데이터를 담아서 보내야한다. 서버도 클라이언트에 응답하기 위해 응답 메시지의 본문(body)에 데이터를 담아서 보내야 한다.<br>
+이 때의 body를 각각 Request Body와 Response Body로 부르는데 이러한 Body에 담기는 데이터 형식은 JSON,XML등과 같은 데이터로 처리한다. <br>
+
+@RequestBody : JSON -> VO(자바객체)로 변환해주는 Annotation <br>
+@ResponseBody : VO -> JSON로 변환해주는 Annotation <br>
+
+```
+public class MemoRestController {	
+	@Autowired
+	private MemoServiceImpl memoServiceImpl;
+
+	@PostMapping(value="/add_post", consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public void add_post(@RequestBody MemoDto memoDto) throws SQLException {
+		memoServiceImpl.memoAddTx(memoDto);
+	}
+// consumes : 서버측이 받을 데이터 타입을 설정한다. 이 메서드에서는 JSON형식으로 데이터를 받을 것이다.
+// @RequestBody를 통해 JSON으로 받은 데이터를 자바 객체로 변환하여 MemoDto클래스로 받았다.
+
+	@GetMapping(value="/getMemo", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<MemoDto> getMemo() {
+		List<MemoDto> list = memoServiceImpl.getMemos();
+		for(MemoDto dto : list) {
+			System.out.println(dto);
+		}
+		return new ResponseEntity(memoServiceImpl.getMemos(),HttpStatus.OK);
+	}
+// produces : 클라이언트 측이 받을 데이터 타입을 설정한다. 이 메서드에서는 JSON형식으로 데이터를 보낼 것이다.
+// ResponseEntity : 응답의 상태코드와 Body를 함께 관리한다.
+}
+```
