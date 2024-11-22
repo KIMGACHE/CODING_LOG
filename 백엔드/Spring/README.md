@@ -388,6 +388,7 @@ public class MemoRestController {
 <br>
 View차원에서는 axios를 사용하여 get/post/put/patch/delete등의 http요청을 보낼 수 있다. <br>
 각 요청에 따라 들어가는 파라미터가 다르고, Controller에서 정한 데이터타입에 따라서 View에서 데이터타입에 맞게 데이터를 전송한다. <br>
+
 ```
 <!-- axios cdn-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -427,4 +428,5 @@ View차원에서는 axios를 사용하여 get/post/put/patch/delete등의 http�
 			.catch(err=>{console.log(err);});	
 		})	
 </script>
+
 ```
