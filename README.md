@@ -9,5 +9,5 @@
 |응용SW엔지니어링|[JAVA](./프로그래밍언어/JAVA)|[JAVA2](./프로그래밍언어/JAVA2)|[JAVA3](./프로그래밍언어/JAVA3)|
 |DB엔지니어링|[Oracle](./DB엔지니어링/ORACLE)|||
 |백엔드|[JSP](./백엔드/JSP)|[Servlet](./백엔드/Servlet)|[Spring](./백엔드/Spring)|
-
+|백엔드|[Spring Boot](./백엔드/Spring_Boot)|||
 JPA란 자바 ORM기술을 사용하기 위한 인터페이스를 모아둔 것이다.
