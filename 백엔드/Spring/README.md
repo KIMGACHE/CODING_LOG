@@ -384,3 +384,47 @@ public class MemoRestController {
 // ResponseEntity : 응답의 상태코드와 Body를 함께 관리한다.
 }
 ```
+
+<br>
+View차원에서는 axios를 사용하여 get/post/put/patch/delete등의 http요청을 보낼 수 있다. <br>
+각 요청에 따라 들어가는 파라미터가 다르고, Controller에서 정한 데이터타입에 따라서 View에서 데이터타입에 맞게 데이터를 전송한다. <br>
+```
+<!-- axios cdn-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+			
+		const projectPath='${pageContext.request.contextPath}';
+		
+		//GET
+
+		const axiosAsyncGetBtn = document.querySelector('.axiosAsyncGetBtn');
+		axiosAsyncGetBtn.addEventListener('click',function(){
+			const axiosAsyncGetForm = document.axiosAsyncGetForm;
+			
+			axios.get(projectPath+"/memo/add_rest_get?id="+axiosAsyncGetForm.id.value+"&text="+axiosAsyncGetForm.text.value)
+			.then(resp=>{console.log(resp);})
+			.catch(err=>{console.log(err);});	
+		})
+	
+		//POST
+
+		const axiosAsyncPostBtn = document.querySelector('.axiosAsyncPostBtn');
+		axiosAsyncPostBtn.addEventListener('click',function(){
+			//form
+			const axiosAsyncPostForm = document.axiosAsyncPostForm;
+			
+			//header x
+			const headers = {'Content-Type' : 'application/json'};
+			//param
+			const param = {
+					"id" : axiosAsyncPostForm.id.value,
+					"text" : axiosAsyncPostForm.text.value		
+			}
+			
+			//요청
+			axios.post(projectPath+"/memo/add_rest_post",param,headers)
+			.then(resp=>{console.log(resp);})
+			.catch(err=>{console.log(err);});	
+		})	
+</script>
+```
