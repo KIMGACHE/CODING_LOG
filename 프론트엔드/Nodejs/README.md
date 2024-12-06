@@ -29,3 +29,27 @@ JavaScript 런타임
 
 ## .ignore
 gitignore.io 페이지로 가서 node라고 검색하면 나오는 내용을 복사하여 .gitignore파일을 만들어 붙여넣으면 끝
+
+
+## SCSS
+SASS란 대표적인 CSS 전처리기 중 하나이다.
+CSS가 동작하기 전에 사용하는 기능으로 CSS와 문법은 유사하지만 선택자의 중첩이나 조건문, 반복문 등을 사용하여 더 편리하게 작성할 수 있다.
+
+SCSS란 Sass의 3버전에서 등장한 것으로 css와 거의 같은 문법으로 Sass기능을 지원한다.
+**프로젝트 생성**
+```
+- Step 1
+    - npm init -y 
+- Step 2
+    - npm i -D parcel-bundler
+- Step 3
+    - package.json->
+    - "scripts": {
+         "dev" : "parcel 01.html",
+      "build" : "parcel build 01.html" 
+    - },
+- Step 4
+    - npm run dev 
+```
+
+
