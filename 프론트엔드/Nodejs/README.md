@@ -19,7 +19,13 @@ JavaScript 런타임
 4. 단일 스레드이다.
 
 ## Node.js설치
+1. nodejs검색 후 최신버전 다운로드
+2. NPM 설치
+3. npm init -y
+4. npm install parcel-bundler -D
 
+(NPM : Node Package Manager,Node.js 환경에서 사용 가능한 패키지를 다운 받을 수 있게 하는 도구) <br>
+(npm install parcel-bundler -D 명령어는 현재 프로젝트에 parcel-bundler를 개발 시에 사용할 패키지로 설치.) <br>
 
-
-
+## .ignore
+gitignore.io 페이지로 가서 node라고 검색하면 나오는 내용을 복사하여 .gitignore파일을 만들어 붙여넣으면 끝
