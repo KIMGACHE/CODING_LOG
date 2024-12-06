@@ -52,4 +52,36 @@ SCSS란 Sass의 3버전에서 등장한 것으로 css와 거의 같은 문법으
     - npm run dev 
 ```
 
+### 중첩
+```
+.container {
+  border: 1px solid;
+  width: 500px;
 
+  ul {
+    border: 1px solid white;
+    width: 300px;
+  }
+}
+```
+위의 코드의 경우 class가 container인 div의 스타일과 container의 자식 ul의 스타일을 적은것 <br>
+기존의 css와 달리 중첩하는 방식으로 코드를 쓴다.
+
+### 변수
+```
+$globalSize : 250px;    // 변수 선언
+
+.container {
+    border: 1px solid;
+    width: $globalSize;
+    margin: 50px;
+
+    $c1Height : 100px;   // 동일한 계층과 하위 계층에서만 사용가능한 변수
+    .item {
+        width: $globalSize;
+        height: $c1Height;
+        background-color: royalblue;
+    }
+}
+```
+$를 사용해
