@@ -10,5 +10,4 @@
 |DB엔지니어링|[Oracle](./DB엔지니어링/ORACLE)|||
 |백엔드|[JSP](./백엔드/JSP)|[Servlet](./백엔드/Servlet)|[Spring](./백엔드/Spring)|
 |백엔드|[Spring Boot](./백엔드/Spring_Boot)|||
-
-JPA란 자바 ORM기술을 사용하기 위한 인터페이스를 모아둔 것이다.
+|프론트엔드|[Nodejs](./프론트엔드/Nodejs)|[React](./프론트엔드/React)||
