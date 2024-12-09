@@ -17,7 +17,7 @@ React는 Facebook에서 개발하고 유지관리하는 오픈 소스 자바스�
 ```
 폴더를 하나 생성하여 해당 폴더의 cmd창을 열어 커맨드 입력
 npx create-react-app '프로젝트명'
-
+------------------------------------------------------------------------------
 import logo from './logo.svg';
 import './App.css';
 
@@ -48,9 +48,69 @@ export default App;
 
 
 ## JSX
+```
+const basic = ()=>{
 
 
+    return (
+        <>
+            <h1>Basic Component</h1>
+        </>
+    );
+}
 
+export default basic;
+
+--> basic.js파일을 위와 같이 생성한 뒤 App.js에서 불러올 수 있다
+import basic from './JSX/basic';
+
+      <div>
+        <basic />
+      </div>
+```
+
+```
+const basic1 = ()=>{
+
+
+    return (
+        <>
+            <h1>Basic1 Component</h1>
+        </>
+    );
+}
+
+const basic2 = ()=>{
+
+
+    return (
+        <>
+            <h1>Basic2 Component</h1>
+        </>
+    );
+}
+
+const basic3 = ()=>{
+
+
+    return (
+        <>
+            <h1>Basic3 Component</h1>
+        </>
+    );
+}
+
+export default {basic1,basic2};
+
+--> 이렇게 default가 여러개의 함수로 이루어진 경우
+--> App.js에서 .basic1 , .basic2로 접근 가능하다.
+
+import basic from './JSX/basic';
+
+      <div>
+        <basic.basic1 />
+      </div>
+```
 
 
 
