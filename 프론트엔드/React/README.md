@@ -112,9 +112,23 @@ import basic from './JSX/basic';
       </div>
 ```
 
+return할 문장이 하나인 경우
+```
+const basic3 = ()=>{
 
+    return <h1>Basic3 Component</h1>
+}
+--> return의 ()를 생략할 수 있다.
 
+const basic3 = <h1>Basic3 Component</h1>
+--> 화살표 함수도 생략가능하다.
+```
 
+export default가 아니라 export로 가져오는 함수의 경우
+```
+import {basic3} from './JSX/basic';
+--> ./JSX/basic에서 export하는 함수들 중에서 특정 함수만을 가져올 때 {}를 사용한다. 이때, {}안에는 함수명이 들어가야한다.
+```
 
 
 
