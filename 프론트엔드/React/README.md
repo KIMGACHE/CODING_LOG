@@ -48,6 +48,7 @@ export default App;
 
 
 ## JSX
+### basic
 ```
 const basic = ()=>{
 
@@ -130,15 +131,82 @@ import {basic3} from './JSX/basic';
 --> ./JSX/basic에서 export하는 함수들 중에서 특정 함수만을 가져올 때 {}를 사용한다. 이때, {}안에는 함수명이 들어가야한다.
 ```
 
+외부의 값을 받아오는 props
+```
+const Tmp = (props) => {
+   if(props)
+      return <h1>Hello ? {props.title}</h1>
+   else
+      return <h1>Hello</h1>
+    );
+}
 
+export const basic4 = <Tmp title="basic4_Test" />
+export const basic5 = <Tmp />
+--> component의 이름은 대문자로 시작해야 한다.
+```
 
+```
+const Tmp2 = (props) => {
+    return(
+        <>
+            <ul>
+                {props.data.map((el)=>{
+                    console.log(el);
+                    return (
+                        <li>{el}</li>
+                    );
+                })}
+            </ul>
+            <ul>
+                {props.data.map((el)=><li>{el}</li>)}
+            </ul>
+        </>
+    );
+}
+--> return 내부에서 한번 더 return 할 수 있음
+```
 
+### Event
+**클릭 이벤트**
+```
+const EventComponent1 = () => {
+    return (
+        <button onClick={(e)=>{console.log("EventComponent1",e)}}>버튼1</button>
+    );
+}
+export default {
+    EventComponent1,
+}
 
+import EC from './JSX/Event';
 
+<EC.EventComponent />
+```
 
+함수 내부에 이벤트를 정의
+```
+const EventComponent2 = () => {
+    const handleClick2 = (e)=>{console.log("EventComponent2",e)}
+    return (
+        <button onClick={handleClick2}>버튼2</button>
+    );
+}
+```
 
+**키보드이벤트**
+```
+const EventComponent3 = () => {
 
+    const handleKeyDown = (e) => {
+        console.log("KeyDownEvent",e.keyCode)
+    }
 
+    return (
+        <input onKeyDown={handleKeyDown}/>
+    );
+}
+```
 
 
 
