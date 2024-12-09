@@ -17,5 +17,63 @@ React는 Facebook에서 개발하고 유지관리하는 오픈 소스 자바스�
 ```
 폴더를 하나 생성하여 해당 폴더의 cmd창을 열어 커맨드 입력
 npx create-react-app '프로젝트명'
+
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <div className="top-header">
+        Hello, World.
+      </div>
+    </div>
+  );
+}
+
+export default App;
 ```
+**반드시 return아래에는 태그가 존재해야하고 단 하나의 태그만이 존재해야한다.** <br>
+**html과 다르게 class가 아니라 className을 사용한다.** <br>
+
+
+## JSX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
