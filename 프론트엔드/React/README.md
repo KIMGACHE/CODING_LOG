@@ -215,7 +215,10 @@ const EventComponent3 = () => {
 
 
 
+props : 외부에서 내부로 들어오는 데이터
+state : 컴포넌트 내부에서 일정 시간동안 값을 유지해야하는 데이터
 
+useState : 비동기 함수모듈
 
 
 
