@@ -22,19 +22,29 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let title = "제목부분 입니다";
+  const st = {color:"orange"}
+
   return (
-    <div className="App">
+    <>
       <div className="top-header">
+        <h1 style={{color:"gray",backgroundColor:"black"}}>{title}</h1>
         Hello, World.
       </div>
-    </div>
+      <div className="nav" style={st}>
+        World, Hello.
+      </div>
+    </>
   );
 }
 
 export default App;
+
 ```
-**반드시 return아래에는 태그가 존재해야하고 단 하나의 태그만이 존재해야한다.** <br>
+**반드시 return아래에는 태그가 존재해야하고 단 하나의 (상위)태그만이 존재해야한다.** <br>
 **html과 다르게 class가 아니라 className을 사용한다.** <br>
+**return이전 부분에 변수를 선언할 수 있고 이 변수를 사용할 때에는 {}안에 변수명을 넣어준다.** <br>
+**style의 경우 json type으로 내용을 받아오기 때문에 {}내부에 다시 json형식인 {}를 써서 style을 지정한다.**
 
 
 ## JSX
