@@ -229,6 +229,23 @@ useState : 비동기 함수모듈
 
 
 
+github 새 repository생성
 
+리액트 프로젝트 터미널에서 npm install gh-pages --save-dev
+package.json에서 제일위에 private아래단에
+"homepage": "https://KIMGACHE.github.io/reactTest/",
+를 추가 KIMGACHE는 본인 아이디 reactTest는 repository명
+
+아래 script에 "predeploy": "npm run build", "deploy": "gh-pages -d build" 추가
+
+git init
+git add * 
+git commit -m "."
+git branch -M main
+git remote add origin 'url' main
+npm run deploy
+
+그러고 github repository의 settings에서 page보면 url경로가있고 들어가보면 
+리액트 앱이 나옴
 
 
