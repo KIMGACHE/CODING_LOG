@@ -102,8 +102,11 @@ create user dbconn@'%' identified by 'Zhfldk11!'; 입력 -> dbconn이라는 user
 grant all privileges on *.* to dbconn; -> 모든 DB에 대한 권한 획득
 quit해서 sql을 나가준뒤 local에서 workbench를 실행한다.
 
-
-
+MySQL Connections에서 +를 눌러 새 Connection을 만든다.
+hostname은 AWS의 public IPv4를 복사하여 입력한다. username도 dbconn으로 설정
+port는 3306이나 AWS에서 설정해주지 않았으므로 AWS 실행중인 인스턴스의 보안탭으로 감 - 보안그룹에 있는 링크 클릭
+인바운드 규칙 편집 DB의 경우 아무나 접근하면 안되므로 내IP에 Port를 3306으로 설정한다.
+비밀번호는 위에서 설정한 Zhfldk11!로 가능하다
 
 
 
