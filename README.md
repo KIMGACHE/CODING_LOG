@@ -24,3 +24,9 @@
 퍼블릭 IPv4주소를 복사 - putty에 Host Name에 붙여넣기 - 좌측 SSH탭 Auth - Credential - preivate key file을 넣어줘야한다.
 puttygen을 킴 - 상단의 conversions - import key에 아까 다운받았던 키페어를 넣어준다. save private key를 누름 - .ppk확장자로 변경되는 것을 볼 수 있다. - ppk파일을 아까 private key file에 넣어주고 session탭에가서 Open한다.
 로그인 id는 ec2-user를 치면 private key가 비밀번호가 되어 자동으로 로그인된다
+
+EC2의 대시보드 - 클릭 후 하단의 보안 탭 - 인바운드 규칙(외부에서 내부로 들어올 때 규칙), 아웃바운드 규칙(내부에서 외부로 나갈 때 규칙) -
+보안그룹 클릭 - 인바운드 규칙 편집 - 0.0.0.0/0으로 설정되어있을것 -> 모든 곳에서 접근가능 - 이를 내IP선택 - 규칙추가 - 사용자 지정TCP - 포트설정(ex 8080) anywhere Ipv4를 누르고 0.0.0.0/0인 상태로 규칙저장
+
+putty 환경에서 df -h 입력 - Mounted on에 /경로에 Size가 현재 사용할 수 있는 보조기억장치의 크기를 볼 수 있다.
+free -h라고 입력하면 주기억장치의 크기를 볼 수 잇음(너무적어서 보조기억장치를 주기억장치로 끌어온다-swap)
