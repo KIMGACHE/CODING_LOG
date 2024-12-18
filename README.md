@@ -91,9 +91,16 @@ sudo systemctl enable mysqld
 
 초기 패스워드 확인 (중요)
 sudo vi /var/log/mysqld.log
-로그들 중에 temporary password에서 끝에보면 비밀번호가있음
+로그들 중에 temporary password에서 끝에보면 비밀번호가있음 그걸 복사함 - 상단의 putty탭을 우클릭하여 duplicate session을 통해
+새로운 putty창을 열고
+mysql -u root -p 입력후 비밀번호 입력하는 칸에 방금 복사한 비밀번호를 사용함
+sql창에서 alter user root@localhost identified by 'Zhfldk11!'; 입력 (대문자필요)
 
+현재까지 putty에서 mysql에는 접속되지만 local에서 workbench로 접근은 불가함.
 
+create user dbconn@'%' identified by 'Zhfldk11!'; 입력 -> dbconn이라는 user를 만듬 이때 dbconn은 모든 ip주소에서 사용가능
+grant all privileges on *.* to dbconn; -> 모든 DB에 대한 권한 획득
+quit해서 sql을 나가준뒤 local에서 workbench를 실행한다.
 
 
 
