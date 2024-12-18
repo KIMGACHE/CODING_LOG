@@ -30,3 +30,78 @@ EC2의 대시보드 - 클릭 후 하단의 보안 탭 - 인바운드 규칙(외�
 
 putty 환경에서 df -h 입력 - Mounted on에 /경로에 Size가 현재 사용할 수 있는 보조기억장치의 크기를 볼 수 있다.
 free -h라고 입력하면 주기억장치의 크기를 볼 수 잇음(너무적어서 보조기억장치를 주기억장치로 끌어온다-swap)
+
+TimeZONE설정
+date를 입력하면 대한민국 시간과 맞지않는 것을 볼 수 있다.
+sudo rm /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+입력 후 다시 date를 입력하면 한국 시간과 맞게된다.
+
+swap 설정
+sudo dd if=/dev/zero of=/swapfile bs=128M count=16
+128메가를 16개사용 128x16 => 약 2기가
+
+스왑 파일에 대한 읽기 쓰기 권한 업데이트
+sudo chmod 600 /swapfile
+
+Linux 스왑 영역 설정
+sudo mkswap /swapfile
+
+스왑공간에 스왑파일을 추가하여 스왑파일을 즉시 사용할 수 있도록 변경
+sudo swapon /swapfile
+
+절차가 정상적으로 변경되었는지 확인
+sudo swapon -s
+
+free -h를 써보면 Swap에 2Gi 추가된다.
+
+이 모든 과정이 컴퓨터가 재부팅되면 모두 사라지므로 재부팅되어도 자동 설정되게끔하는 파일을 추가
+sudo vi /etc/fstab
+커서를 가장 아래로 내리고 o를 눌러 insert모드 진입 이후
+/swapfile swap swap defaults 0 0
+입력후 esc로 insert모드 탈출한 후 :wq를 입력하여 저장후 종료
+
+mount -a 입력
+
+JDK 설치
+sudo su
+sudo yum install -y java-21
+java --version으로 버전 확인가능
+
+cf. 여러 jdk 중 선택(안해도됨)
+alternatives --config java
+
+GIT 설치
+sudo yum install -y git 
+
+MySQL설치
+mysql community download를 웹에서 검색
+mysql yum repository로 들어가기
+가장위에거를 download들어감 - no thanks어쩌구를 우클릭하여 링크 주소 복사를 선택
+putty에서 sudo yum install -y https://dev.mysql.com/get/mysql84-community-release-el9-1.noarch.rpm(아까 복사한 주소)
+
+MySQL서버 설치
+sudo yum install -y mysql-server
+
+sudo systemctl status mysqld -> 가서보면 inactive
+sudo systemctl start mysqld
+sudo systemctl status mysqld -> active
+
+sudo systemctl enable mysqld
+
+초기 패스워드 확인 (중요)
+sudo vi /var/log/mysqld.log
+로그들 중에 temporary password에서 끝에보면 비밀번호가있음
+
+
+
+
+
+
+
+
+
+
+
+
+
