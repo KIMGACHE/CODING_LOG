@@ -12,3 +12,5 @@
 |백엔드|[Spring Boot](./백엔드/Spring_Boot)|||
 |프론트엔드|[Nodejs](./프론트엔드/Nodejs)|[React](./프론트엔드/React)||
 |배포|[AWS](./배포/AWS)|[Jenkins](./배포/Jenkins)||
+
+https://github.com/pnucse-capstone/capstone-2023-1-01
